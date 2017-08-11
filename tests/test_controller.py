@@ -2,8 +2,10 @@ import sys
 import os
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import unittest
+from terminaltables import AsciiTable
 from settings import relays
 from controller import Controller
+
 
 
 class ControllerTestCase(unittest.TestCase):
@@ -76,3 +78,5 @@ class ControllerTestCase(unittest.TestCase):
         self.con.set_sv(self.con.pv() - 1)
         assert self.con.watch()
 
+    def test_status_table(self):
+        assert isinstance(self.con.status_table(), AsciiTable)

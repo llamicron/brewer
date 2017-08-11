@@ -2,6 +2,7 @@ import str116
 from settings import relays
 import time
 import omegacn7500
+from terminaltables import AsciiTable
 
 class Controller:
     def __init__(self):
@@ -75,3 +76,13 @@ class Controller:
 
         # Ping on slack when complete
         return True
+
+    def status_table(self):
+        status = AsciiTable([
+            ["Setting", "Value"],
+            ["PID on?", str(self.pid_status()['pid_running'])],
+            ["Pump on?", str(self.pump_status())],
+            ["pv", str(self.pv())],
+            ["sv", str(self.sv())]
+        ])
+        return status
