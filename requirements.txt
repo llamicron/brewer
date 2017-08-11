@@ -1,0 +1,4 @@
+slacker
+minimalmodbus
+omegacn7500
+terminaltables
