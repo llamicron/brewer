@@ -4,53 +4,95 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+AsciiTable	../controller.py	/^from terminaltables import AsciiTable$/;"	kind:namespace	line:5
+AsciiTable	../tests/test_controller.py	/^from terminaltables import AsciiTable$/;"	kind:namespace	line:5
 CN	../settings.py	/^CN = '02'$/;"	kind:variable	line:25
 Controller	../brewer.py	/^from controller import Controller$/;"	kind:namespace	line:1
-Controller	../controller.py	/^class Controller:$/;"	kind:class	line:4
-Controller	../tests/test_controller.py	/^from controller import Controller$/;"	kind:namespace	line:5
-ControllerTestCase	../tests/test_controller.py	/^class ControllerTestCase(unittest.TestCase):$/;"	kind:class	line:8
+Controller	../controller.py	/^class Controller:$/;"	kind:class	line:7
+Controller	../tests/test_controller.py	/^from controller import Controller$/;"	kind:namespace	line:7
+ControllerTestCase	../tests/test_controller.py	/^class ControllerTestCase(unittest.TestCase):$/;"	kind:class	line:11
 DEBUG	../settings.py	/^DEBUG = False$/;"	kind:variable	line:35
 MA0	../settings.py	/^MA0 = '55'$/;"	kind:variable	line:16
 MA1	../settings.py	/^MA1 = 'AA'$/;"	kind:variable	line:19
 MAE	../settings.py	/^MAE = '77'$/;"	kind:variable	line:22
-__init__	../controller.py	/^    def __init__(self):$/;"	kind:member	line:5
+SlackTestCase	../tests/test_slack.py	/^class SlackTestCase(unittest.TestCase):$/;"	kind:class	line:8
+Slacker	../slack.py	/^from slacker import Slacker$/;"	kind:namespace	line:1
+Slacker	../tests/test_slack.py	/^from slacker import Slacker$/;"	kind:namespace	line:4
+__init__	../controller.py	/^    def __init__(self):$/;"	kind:member	line:8
 __init__.py	../__init__.py	1;"	kind:file	line:1
 _get_checksum	../str116.py	/^def _get_checksum(data):$/;"	kind:function	line:44
+_safegaurd_state	../controller.py	/^    def _safegaurd_state(self, state):$/;"	kind:member	line:56
 _write_message	../str116.py	/^def _write_message(data):$/;"	kind:function	line:8
 _write_message_with_response	../str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:23
 baudRate	../settings.py	/^baudRate = 19200$/;"	kind:variable	line:11
 binascii	../str116.py	/^import binascii$/;"	kind:namespace	line:5
 brewer.py	../brewer.py	1;"	kind:file	line:1
-code	../brewer.py	/^    import code$/;"	kind:namespace	line:6
-controller	../brewer.py	/^controller = Controller()$/;"	kind:variable	line:3
+code	../brewer.py	/^import code$/;"	kind:namespace	line:2
+controller	../brewer.py	/^controller = Controller()$/;"	kind:variable	line:4
 controller.py	../controller.py	1;"	kind:file	line:1
 get_relay	../str116.py	/^def get_relay(relaynumber):$/;"	kind:function	line:65
-get_relays_status	../str116.py	/^def get_relays_status():$/;"	kind:function	line:77
-main	../brewer.py	/^def main():$/;"	kind:function	line:5
-omegacn7500	../controller.py	/^import omegacn7500$/;"	kind:namespace	line:2
+get_relays_status	../str116.py	/^def get_relays_status():$/;"	kind:function	line:78
+get_token_from_file	../slack.py	/^def get_token_from_file():$/;"	kind:function	line:6
+hlt	../controller.py	/^    def hlt(self, state):$/;"	kind:member	line:24
+hlt_to	../controller.py	/^    def hlt_to(self, location):$/;"	kind:member	line:28
+main	../brewer.py	/^def main():$/;"	kind:function	line:6
+omegacn7500	../controller.py	/^import omegacn7500$/;"	kind:namespace	line:4
+os	../slack.py	/^import os$/;"	kind:namespace	line:2
 os	../str116.py	/^import os$/;"	kind:namespace	line:6
 os	../tests/test_controller.py	/^import os$/;"	kind:namespace	line:2
-pid_status	../controller.py	/^    def pid_status(self):$/;"	kind:member	line:14
+os	../tests/test_slack.py	/^import os$/;"	kind:namespace	line:2
+pid_status	../controller.py	/^    def pid_status(self):$/;"	kind:member	line:17
 port	../settings.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:4
-relay_status	../controller.py	/^    def relay_status(self, relay_num):$/;"	kind:member	line:8
+pump	../controller.py	/^    def pump(self, state):$/;"	kind:member	line:52
+pump_status	../controller.py	/^    def pump_status(self):$/;"	kind:member	line:49
+pv	../controller.py	/^    def pv(self):$/;"	kind:member	line:70
+relay_status	../controller.py	/^    def relay_status(self, relay_num):$/;"	kind:member	line:11
+relays	../controller.py	/^from settings import relays$/;"	kind:namespace	line:2
 relays	../settings.py	/^relays = {$/;"	kind:variable	line:29
+relays	../tests/test_controller.py	/^from settings import relays$/;"	kind:namespace	line:6
 rimsAddress	../settings.py	/^rimsAddress = 1$/;"	kind:variable	line:7
+rims_to	../controller.py	/^    def rims_to(self, location):$/;"	kind:member	line:39
 serial	../str116.py	/^import serial$/;"	kind:namespace	line:2
-setUp	../tests/test_controller.py	/^    def setUp(self):$/;"	kind:member	line:9
-set_baudrate	../str116.py	/^def set_baudrate():$/;"	kind:function	line:103
-set_relay	../controller.py	/^    def set_relay(self, relay_num, state):$/;"	kind:member	line:11
+setUp	../tests/test_controller.py	/^    def setUp(self):$/;"	kind:member	line:12
+setUp	../tests/test_slack.py	/^    def setUp(self):$/;"	kind:member	line:9
+set_baudrate	../str116.py	/^def set_baudrate():$/;"	kind:function	line:104
+set_relay	../controller.py	/^    def set_relay(self, relay_num, state):$/;"	kind:member	line:14
 set_relay	../str116.py	/^def set_relay(relaynumber, onoff):$/;"	kind:function	line:49
+set_sv	../controller.py	/^    def set_sv(self, temp):$/;"	kind:member	line:65
 settings	../str116.py	/^import settings$/;"	kind:namespace	line:3
 settings.py	../settings.py	1;"	kind:file	line:1
+slack	../tests/test_slack.py	/^import slack$/;"	kind:namespace	line:6
+slack.py	../slack.py	1;"	kind:file	line:1
+slacker	../slack.py	/^def slacker():$/;"	kind:function	line:11
+status_table	../controller.py	/^    def status_table(self):$/;"	kind:member	line:80
 str116	../controller.py	/^import str116$/;"	kind:namespace	line:1
 str116.py	../str116.py	1;"	kind:file	line:1
+sv	../controller.py	/^    def sv(self):$/;"	kind:member	line:62
 switchAddress	../settings.py	/^switchAddress = 2$/;"	kind:variable	line:9
 sys	../tests/test_controller.py	/^import sys$/;"	kind:namespace	line:1
+sys	../tests/test_slack.py	/^import sys$/;"	kind:namespace	line:3
 test_controller.py	../tests/test_controller.py	1;"	kind:file	line:1
-test_object_creation	../tests/test_controller.py	/^    def test_object_creation(self):$/;"	kind:member	line:12
-test_pid_status	../tests/test_controller.py	/^    def test_pid_status(self):$/;"	kind:member	line:26
-test_relay_status	../tests/test_controller.py	/^    def test_relay_status(self):$/;"	kind:member	line:15
-test_set_relay	../tests/test_controller.py	/^    def test_set_relay(self):$/;"	kind:member	line:20
+test_get_data_from_slack	../tests/test_slack.py	/^    def test_get_data_from_slack(self):$/;"	kind:member	line:18
+test_get_token_from_file	../tests/test_slack.py	/^    def test_get_token_from_file(self):$/;"	kind:member	line:12
+test_hlt	../tests/test_controller.py	/^    def test_hlt(self):$/;"	kind:member	line:36
+test_hlt_to	../tests/test_controller.py	/^    def test_hlt_to(self):$/;"	kind:member	line:50
+test_object_creation	../tests/test_controller.py	/^    def test_object_creation(self):$/;"	kind:member	line:15
+test_pid_status	../tests/test_controller.py	/^    def test_pid_status(self):$/;"	kind:member	line:28
+test_pid_status_types	../tests/test_controller.py	/^    def test_pid_status_types(self):$/;"	kind:member	line:31
+test_pump	../tests/test_controller.py	/^    def test_pump(self):$/;"	kind:member	line:58
+test_pv	../tests/test_controller.py	/^    def test_pv(self):$/;"	kind:member	line:74
+test_relay_status	../tests/test_controller.py	/^    def test_relay_status(self):$/;"	kind:member	line:18
+test_return_slacker	../tests/test_slack.py	/^    def test_return_slacker(self):$/;"	kind:member	line:15
+test_rims_to	../tests/test_controller.py	/^    def test_rims_to(self):$/;"	kind:member	line:42
+test_set_relay	../tests/test_controller.py	/^    def test_set_relay(self):$/;"	kind:member	line:22
+test_slack.py	../tests/test_slack.py	1;"	kind:file	line:1
+test_status_table	../tests/test_controller.py	/^    def test_status_table(self):$/;"	kind:member	line:81
+test_sv	../tests/test_controller.py	/^    def test_sv(self):$/;"	kind:member	line:67
+test_watch	../tests/test_controller.py	/^    def test_watch(self):$/;"	kind:member	line:77
+time	../controller.py	/^import time$/;"	kind:namespace	line:3
 time	../str116.py	/^import time$/;"	kind:namespace	line:4
 timeout	../settings.py	/^timeout = 2$/;"	kind:variable	line:13
+token_file	../slack.py	/^token_file = os.path.expanduser("~") + "\/slack.token"$/;"	kind:variable	line:4
 unittest	../tests/test_controller.py	/^import unittest$/;"	kind:namespace	line:4
+unittest	../tests/test_slack.py	/^import unittest$/;"	kind:namespace	line:1
+watch	../controller.py	/^    def watch(self):$/;"	kind:member	line:73

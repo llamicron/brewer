@@ -1,9 +1,11 @@
 from controller import Controller
+from slack import BrewerBot
+import code
 
 controller = Controller()
+bot = BrewerBot()
 
 def main():
-    import code
     code.InteractiveConsole(locals=globals()).interact()
 
 if __name__ == '__main__':
