@@ -53,3 +53,26 @@ class ControllerTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.con.hlt_to("Narnia")
 
+    def test_pump(self):
+        self.con.pump(1)
+        assert self.con.pump_status()
+        self.con.pump(0)
+        assert not self.con.pump_status()
+        with self.assertRaises(ValueError):
+            self.con.pump("turn it on, damnit")
+
+
+    def test_sv(self):
+        assert isinstance(self.con.sv(), float)
+        self.con.set_sv(140.0)
+        assert self.con.sv() == 140.0
+        with self.assertRaises(ValueError):
+            self.con.set_sv("Didney Whorl?")
+
+    def test_pv(self):
+        assert isinstance(self.con.pv(), float)
+
+    def test_watch(self):
+        self.con.set_sv(self.con.pv() - 1)
+        assert self.con.watch()
+

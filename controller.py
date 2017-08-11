@@ -21,6 +21,7 @@ class Controller:
         }
 
     def hlt(self, state):
+        self._safegaurd_state(state)
         self.set_relay(relays["hlt"], state)
 
     def hlt_to(self, location):
@@ -43,3 +44,34 @@ class Controller:
             return True
         else:
             raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
+
+    def pump_status(self):
+        return self.relay_status(relays["pump"])
+
+    def pump(self, state):
+        self._safegaurd_state(state)
+        self.set_relay(relays['pump'], state)
+
+    def _safegaurd_state(self, state):
+        if not isinstance(state, int):
+            raise ValueError("Relay State needs to be an integer, " + str(type(state)) + " given.")
+        if state < 0 or state > 1:
+            raise ValueError("State needs to be integer 0 or 1, " + str(state) + " given.")
+
+    def sv(self):
+        return float(self.omega.get_setpoint())
+
+    def set_sv(self, temp):
+        if not isinstance(temp, int) and not isinstance(temp, float):
+            raise ValueError("Temp argument needs to be a float or integer, " + str(type(temp)) + " given")
+        self.omega.set_setpoint(temp)
+
+    def pv(self):
+        return float(self.omega.get_pv())
+
+    def watch(self):
+        while self.pv() <= self.sv():
+            time.sleep(2)
+
+        # Ping on slack when complete
+        return True
