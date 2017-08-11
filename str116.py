@@ -64,27 +64,17 @@ def set_relay(relaynumber, onoff):
 
 def get_relay(relaynumber):
     '''Get the status of the requested relay (true/false)'''
+    time.sleep(0.005)
     str_to_checksum = '0714' + settings.CN + '0010'
     CS = _get_checksum(str_to_checksum)
     bytestring = settings.MA0 + settings.MA1 + str_to_checksum \
         + str(CS) + settings.MAE
     relaystatus = _write_message_with_response(bytestring)[6:-4]
     test = relaystatus[relaynumber*2:relaynumber*2+2]
-    try:
-        if int(test) > 0:
-            return True
-        else:
-            return False
-    except ValueError as ex:
-        with open(os.path.expanduser("~") + "/adaptibrew.log", "w+") as file:
-            file.write("---FAIL---" + "\n")
-            file.write("test variable = " + str(test) + "\n")
-            file.write("relaystatus variable = " + str(relaystatus) + "\n")
-            file.write("bytestring variable = " + str(bytestring) + "\n")
-            file.write("string_to_checksum variable = " + str_to_checksum + "\n")
-            file.write("Exception----" + "\n")
-            file.write(str(ex) + "\n")
-
+    if int(test) > 0:
+        return True
+    else:
+        return False
 def get_relays_status():
     #command to get the status of all of the relays in an array.
     #format is

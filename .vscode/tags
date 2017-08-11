@@ -4,4 +4,53 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-brewer.py	../tests/brewer.py	1;"	kind:file	line:1
+CN	../settings.py	/^CN = '02'$/;"	kind:variable	line:25
+Controller	../brewer.py	/^from controller import Controller$/;"	kind:namespace	line:1
+Controller	../controller.py	/^class Controller:$/;"	kind:class	line:4
+Controller	../tests/test_controller.py	/^from controller import Controller$/;"	kind:namespace	line:5
+ControllerTestCase	../tests/test_controller.py	/^class ControllerTestCase(unittest.TestCase):$/;"	kind:class	line:8
+DEBUG	../settings.py	/^DEBUG = False$/;"	kind:variable	line:35
+MA0	../settings.py	/^MA0 = '55'$/;"	kind:variable	line:16
+MA1	../settings.py	/^MA1 = 'AA'$/;"	kind:variable	line:19
+MAE	../settings.py	/^MAE = '77'$/;"	kind:variable	line:22
+__init__	../controller.py	/^    def __init__(self):$/;"	kind:member	line:5
+__init__.py	../__init__.py	1;"	kind:file	line:1
+_get_checksum	../str116.py	/^def _get_checksum(data):$/;"	kind:function	line:44
+_write_message	../str116.py	/^def _write_message(data):$/;"	kind:function	line:8
+_write_message_with_response	../str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:23
+baudRate	../settings.py	/^baudRate = 19200$/;"	kind:variable	line:11
+binascii	../str116.py	/^import binascii$/;"	kind:namespace	line:5
+brewer.py	../brewer.py	1;"	kind:file	line:1
+code	../brewer.py	/^    import code$/;"	kind:namespace	line:6
+controller	../brewer.py	/^controller = Controller()$/;"	kind:variable	line:3
+controller.py	../controller.py	1;"	kind:file	line:1
+get_relay	../str116.py	/^def get_relay(relaynumber):$/;"	kind:function	line:65
+get_relays_status	../str116.py	/^def get_relays_status():$/;"	kind:function	line:77
+main	../brewer.py	/^def main():$/;"	kind:function	line:5
+omegacn7500	../controller.py	/^import omegacn7500$/;"	kind:namespace	line:2
+os	../str116.py	/^import os$/;"	kind:namespace	line:6
+os	../tests/test_controller.py	/^import os$/;"	kind:namespace	line:2
+pid_status	../controller.py	/^    def pid_status(self):$/;"	kind:member	line:14
+port	../settings.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:4
+relay_status	../controller.py	/^    def relay_status(self, relay_num):$/;"	kind:member	line:8
+relays	../settings.py	/^relays = {$/;"	kind:variable	line:29
+rimsAddress	../settings.py	/^rimsAddress = 1$/;"	kind:variable	line:7
+serial	../str116.py	/^import serial$/;"	kind:namespace	line:2
+setUp	../tests/test_controller.py	/^    def setUp(self):$/;"	kind:member	line:9
+set_baudrate	../str116.py	/^def set_baudrate():$/;"	kind:function	line:103
+set_relay	../controller.py	/^    def set_relay(self, relay_num, state):$/;"	kind:member	line:11
+set_relay	../str116.py	/^def set_relay(relaynumber, onoff):$/;"	kind:function	line:49
+settings	../str116.py	/^import settings$/;"	kind:namespace	line:3
+settings.py	../settings.py	1;"	kind:file	line:1
+str116	../controller.py	/^import str116$/;"	kind:namespace	line:1
+str116.py	../str116.py	1;"	kind:file	line:1
+switchAddress	../settings.py	/^switchAddress = 2$/;"	kind:variable	line:9
+sys	../tests/test_controller.py	/^import sys$/;"	kind:namespace	line:1
+test_controller.py	../tests/test_controller.py	1;"	kind:file	line:1
+test_object_creation	../tests/test_controller.py	/^    def test_object_creation(self):$/;"	kind:member	line:12
+test_pid_status	../tests/test_controller.py	/^    def test_pid_status(self):$/;"	kind:member	line:26
+test_relay_status	../tests/test_controller.py	/^    def test_relay_status(self):$/;"	kind:member	line:15
+test_set_relay	../tests/test_controller.py	/^    def test_set_relay(self):$/;"	kind:member	line:20
+time	../str116.py	/^import time$/;"	kind:namespace	line:4
+timeout	../settings.py	/^timeout = 2$/;"	kind:variable	line:13
+unittest	../tests/test_controller.py	/^import unittest$/;"	kind:namespace	line:4
