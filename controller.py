@@ -1,5 +1,6 @@
 import str116
 from settings import relays
+from slack import BrewerBot
 import time
 import omegacn7500
 from terminaltables import AsciiTable
@@ -7,6 +8,7 @@ from terminaltables import AsciiTable
 class Controller:
     def __init__(self):
         self.omega = omegacn7500.OmegaCN7500('/dev/ttyAMA0', 1) # port name, slave address
+        self.slack = BrewerBot()
 
     def relay_status(self, relay_num):
         return str116.get_relay(relay_num)
@@ -20,6 +22,15 @@ class Controller:
             "sv": self.omega.get_setpoint(),
             "pv": self.omega.get_pv()
         }
+
+    def pid(self, state):
+        if not isinstance(state, int):
+            raise ValueError("State should be an integer" + str(type(state)) + " given")
+        if state == 1:
+            self.omega.run()
+        else:
+            self.omega.stop()
+
 
     def hlt(self, state):
         self._safegaurd_state(state)
@@ -74,7 +85,7 @@ class Controller:
         while self.pv() <= self.sv():
             time.sleep(2)
 
-        # Ping on slack when complete
+        self.slack.send("PV is now at " + str(self.pv()) + " f")
         return True
 
     def status_table(self):
@@ -86,3 +97,7 @@ class Controller:
             ["sv", str(self.sv())]
         ])
         return status
+
+    def relay_config(self, config):
+        for relay, state in config.iteritems():
+            pass

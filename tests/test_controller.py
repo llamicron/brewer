@@ -80,3 +80,12 @@ class ControllerTestCase(unittest.TestCase):
 
     def test_status_table(self):
         assert isinstance(self.con.status_table(), AsciiTable)
+
+    def test_pid(self):
+        self.con.pid(1)
+        assert self.con.pid_status()['pid_running']
+        self.con.pid(0)
+        assert not self.con.pid_status()['pid_running']
+
+    def tearDown(self):
+        self.con.pump(0)
