@@ -37,10 +37,10 @@ class Controller:
         self.set_relay(relays["hlt"], state)
 
     def hlt_to(self, location):
-        if location == "mash":
+        if location == "boil":
             self.set_relay(relays["hltToMash"], 1)
             return True
-        elif location  == "boil":
+        elif location == "mash":
             self.set_relay(relays["hltToMash"], 0)
             return True
         else:
@@ -48,10 +48,10 @@ class Controller:
 
 
     def rims_to(self, location):
-        if location == "mash":
+        if location == "boil":
             self.set_relay(relays["rimsToMash"], 1)
             return True
-        elif location == "boil":
+        elif location == "mash":
             self.set_relay(relays["rimsToMash"], 0)
             return True
         else:
