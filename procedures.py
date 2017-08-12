@@ -182,4 +182,12 @@ def boil():
 
 
 def master():
-    pass
+    boot()
+    heat_strike_water()
+    dough_in()
+    mash()
+    mashout()
+    sparge()
+    top_off()
+    boil()
+    return True
