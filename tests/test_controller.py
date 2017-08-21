@@ -41,17 +41,17 @@ class ControllerTestCase(unittest.TestCase):
 
     def test_rims_to(self):
         self.con.rims_to("mash")
-        assert self.con.relay_status(relays["rimsToMash"])
-        self.con.rims_to("boil")
         assert not self.con.relay_status(relays["rimsToMash"])
+        self.con.rims_to("boil")
+        assert self.con.relay_status(relays["rimsToMash"])
         with self.assertRaises(ValueError):
             self.con.rims_to("Hogwarts")
 
     def test_hlt_to(self):
         self.con.hlt_to("mash")
-        assert self.con.relay_status(relays["hltToMash"])
-        self.con.hlt_to("boil")
         assert not self.con.relay_status(relays["hltToMash"])
+        self.con.hlt_to("boil")
+        assert self.con.relay_status(relays["hltToMash"])
         with self.assertRaises(ValueError):
             self.con.hlt_to("Narnia")
 
