@@ -8,14 +8,11 @@ AsciiTable	../brewer/controller.py	/^from terminaltables import AsciiTable$/;"	k
 AsciiTable	../tests/test_controller.py	/^from terminaltables import AsciiTable$/;"	kind:namespace	line:4
 BrewerBot	../brewer.py	/^from brewer.slack import BrewerBot$/;"	kind:namespace	line:2
 BrewerBot	../brewer/controller.py	/^from slack import BrewerBot$/;"	kind:namespace	line:3
-BrewerBot	../brewer/procedures.py	/^from slack import BrewerBot$/;"	kind:namespace	line:2
 BrewerBot	../brewer/slack.py	/^class BrewerBot(Slacker):$/;"	kind:class	line:4
 BrewerBot	../tests/test_slack.py	/^from ..brewer.slack import BrewerBot$/;"	kind:namespace	line:4
 CN	../brewer/settings.py	/^CN = '02'$/;"	kind:variable	line:25
 Controller	../brewer.py	/^from brewer.controller import Controller$/;"	kind:namespace	line:1
 Controller	../brewer/controller.py	/^class Controller:$/;"	kind:class	line:8
-Controller	../brewer/procedures.py	/^from controller import Controller$/;"	kind:namespace	line:1
-Controller	../brewer/recipe.py	/^from controller import Controller$/;"	kind:namespace	line:1
 Controller	../tests/test_controller.py	/^from ..brewer.controller import Controller$/;"	kind:namespace	line:6
 ControllerTestCase	../tests/test_controller.py	/^class ControllerTestCase(unittest.TestCase):$/;"	kind:class	line:8
 DEBUG	../brewer/settings.py	/^DEBUG = False$/;"	kind:variable	line:35
@@ -23,68 +20,55 @@ MA0	../brewer/settings.py	/^MA0 = '55'$/;"	kind:variable	line:16
 MA1	../brewer/settings.py	/^MA1 = 'AA'$/;"	kind:variable	line:19
 MAE	../brewer/settings.py	/^MAE = '77'$/;"	kind:variable	line:22
 Recipe	../brewer.py	/^from brewer.recipe import Recipe$/;"	kind:namespace	line:3
-Recipe	../brewer/recipe.py	/^class Recipe():$/;"	kind:class	line:7
-Recipe	../tests/test_recipe.py	/^from ..brewer.recipe import Recipe$/;"	kind:namespace	line:3
-RecipeTestCase	../tests/test_recipe.py	/^class RecipeTestCase(unittest.TestCase):$/;"	kind:class	line:6
 SettingsTestCase	../tests/test_settings.py	/^class SettingsTestCase(unittest.TestCase):$/;"	kind:class	line:6
 SlackTestCase	../tests/test_slack.py	/^class SlackTestCase(unittest.TestCase):$/;"	kind:class	line:6
 Slacker	../brewer/slack.py	/^from slacker import Slacker$/;"	kind:namespace	line:1
 StrikeTempCalculator	../tests/test_strike_temp_calculator.py	/^class StrikeTempCalculator(unittest.TestCase):$/;"	kind:class	line:4
 __init__	../brewer/controller.py	/^    def __init__(self):$/;"	kind:member	line:9
-__init__	../brewer/recipe.py	/^    def __init__(self, vars):$/;"	kind:member	line:8
 __init__	../brewer/slack.py	/^    def __init__(self):$/;"	kind:member	line:5
 __init__.py	../__init__.py	1;"	kind:file	line:1
 __init__.py	../brewer/__init__.py	1;"	kind:file	line:1
 __init__.py	../tests/__init__.py	1;"	kind:file	line:1
-_all_to_float	../brewer/recipe.py	/^    def _all_to_float(self, vars_dict):$/;"	kind:member	line:18
 _get_checksum	../brewer/str116.py	/^def _get_checksum(data):$/;"	kind:function	line:44
 _safegaurd_state	../brewer/controller.py	/^    def _safegaurd_state(self, state):$/;"	kind:member	line:69
 _write_message	../brewer/str116.py	/^def _write_message(data):$/;"	kind:function	line:8
 _write_message_with_response	../brewer/str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:23
+author	../setup.py	/^    author='Luke Sweeney',$/;"	kind:variable	line:8
+author_email	../setup.py	/^    author_email='luke@thesweeneys.org',$/;"	kind:variable	line:9
 baudRate	../brewer/settings.py	/^baudRate = 19200$/;"	kind:variable	line:11
 binascii	../brewer/str116.py	/^import binascii$/;"	kind:namespace	line:5
-boil	../brewer/procedures.py	/^def boil():$/;"	kind:function	line:173
-boot	../brewer/procedures.py	/^def boot():$/;"	kind:function	line:25
 bot	../brewer.py	/^bot = BrewerBot()$/;"	kind:variable	line:9
 brewer	../brewer.py	/^import brewer.procedures$/;"	kind:namespace	line:4
 brewer.py	../brewer.py	1;"	kind:file	line:1
-calc_strike_temp	../brewer/procedures.py	/^from strike_temp_calculator import calc_strike_temp$/;"	kind:namespace	line:3
 calc_strike_temp	../brewer/strike_temp_calculator.py	/^def calc_strike_temp(WaterVolInQuarts, GrainMassInPounds, GrainTemp, MashTemp):$/;"	kind:function	line:4
 calc_strike_temp	../tests/test_strike_temp_calculator.py	/^from ..brewer.strike_temp_calculator import calc_strike_temp$/;"	kind:namespace	line:1
+classifiers	../setup.py	/^    classifiers=[],$/;"	kind:variable	line:13
 code	../brewer.py	/^import code$/;"	kind:namespace	line:6
-con	../brewer/procedures.py	/^con = Controller()$/;"	kind:variable	line:6
-confirm	../brewer/procedures.py	/^def confirm():$/;"	kind:function	line:18
-conn	../brewer/recipe.py	/^conn = sqlite3.connect(db_file)$/;"	kind:variable	line:5
 controller	../brewer.py	/^controller = Controller()$/;"	kind:variable	line:8
 controller.py	../brewer/controller.py	1;"	kind:file	line:1
-db_file	../brewer/recipe.py	/^from settings import db_file$/;"	kind:namespace	line:2
-dough_in	../brewer/procedures.py	/^def dough_in():$/;"	kind:function	line:76
+description	../setup.py	/^    description='A package to control our brew rig',$/;"	kind:variable	line:7
+download_url	../setup.py	/^    download_url='https:\/\/github.com\/llamicron\/brewer\/archive\/0.1.tar.gz',$/;"	kind:variable	line:11
 get_relay	../brewer/str116.py	/^def get_relay(relaynumber):$/;"	kind:function	line:65
 get_relays_status	../brewer/str116.py	/^def get_relays_status():$/;"	kind:function	line:78
 get_token_from_file	../brewer/slack.py	/^    def get_token_from_file(self):$/;"	kind:member	line:10
-heat_strike_water	../brewer/procedures.py	/^def heat_strike_water():$/;"	kind:function	line:39
 hlt	../brewer/controller.py	/^    def hlt(self, state):$/;"	kind:member	line:35
 hlt_to	../brewer/controller.py	/^    def hlt_to(self, location):$/;"	kind:member	line:40
-load_selected_recipe	../brewer/recipe.py	/^    def load_selected_recipe(self):$/;"	kind:member	line:12
+keywords	../setup.py	/^    keywords=['beer', 'python', 'brewing'],$/;"	kind:variable	line:12
 main	../brewer.py	/^def main():$/;"	kind:function	line:12
-mash	../brewer/procedures.py	/^def mash():$/;"	kind:function	line:85
-mashout	../brewer/procedures.py	/^def mashout():$/;"	kind:function	line:111
-master	../brewer/procedures.py	/^def master():$/;"	kind:function	line:184
+name	../setup.py	/^    name='brewer',$/;"	kind:variable	line:4
 omegacn7500	../brewer/controller.py	/^import omegacn7500$/;"	kind:namespace	line:5
 os	../brewer/slack.py	/^import os$/;"	kind:namespace	line:2
 os	../brewer/str116.py	/^import os$/;"	kind:namespace	line:6
 os	../tests/test_controller.py	/^import os$/;"	kind:namespace	line:2
-os	../tests/test_recipe.py	/^import os$/;"	kind:namespace	line:1
 os	../tests/test_slack.py	/^import os$/;"	kind:namespace	line:2
+packages	../setup.py	/^    packages=['brewer'],$/;"	kind:variable	line:5
 pid	../brewer/controller.py	/^    def pid(self, state):$/;"	kind:member	line:26
 pid_status	../brewer/controller.py	/^    def pid_status(self):$/;"	kind:member	line:19
 port	../brewer/settings.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:4
 procedures	../brewer.py	/^import brewer.procedures$/;"	kind:namespace	line:4
-procedures.py	../brewer/procedures.py	1;"	kind:file	line:1
 pump	../brewer/controller.py	/^    def pump(self, state):$/;"	kind:member	line:64
 pump_status	../brewer/controller.py	/^    def pump_status(self):$/;"	kind:member	line:61
 pv	../brewer/controller.py	/^    def pv(self):$/;"	kind:member	line:85
-recipe.py	../brewer/recipe.py	1;"	kind:file	line:1
 relay_status	../brewer/controller.py	/^    def relay_status(self, relay_num):$/;"	kind:member	line:13
 relays	../brewer/controller.py	/^from settings import relays$/;"	kind:namespace	line:2
 relays	../brewer/settings.py	/^relays = {$/;"	kind:variable	line:29
@@ -94,7 +78,6 @@ rims_to	../brewer/controller.py	/^    def rims_to(self, location):$/;"	kind:memb
 send	../brewer/slack.py	/^    def send(self, message):$/;"	kind:member	line:15
 serial	../brewer/str116.py	/^import serial$/;"	kind:namespace	line:2
 setUp	../tests/test_controller.py	/^    def setUp(self):$/;"	kind:member	line:9
-setUp	../tests/test_recipe.py	/^    def setUp(self):$/;"	kind:member	line:7
 setUp	../tests/test_slack.py	/^    def setUp(self):$/;"	kind:member	line:7
 set_baudrate	../brewer/str116.py	/^def set_baudrate():$/;"	kind:function	line:104
 set_relay	../brewer/controller.py	/^    def set_relay(self, relay_num, state):$/;"	kind:member	line:16
@@ -103,13 +86,10 @@ set_sv	../brewer/controller.py	/^    def set_sv(self, temp):$/;"	kind:member	lin
 settings	../brewer/str116.py	/^import settings$/;"	kind:namespace	line:3
 settings	../tests/test_settings.py	/^from ..brewer import settings$/;"	kind:namespace	line:1
 settings.py	../brewer/settings.py	1;"	kind:file	line:1
+setup	../setup.py	/^from distutils.core import setup$/;"	kind:namespace	line:1
 setup.py	../setup.py	1;"	kind:file	line:1
-slack	../brewer/procedures.py	/^slack = BrewerBot()$/;"	kind:variable	line:7
 slack.py	../brewer/slack.py	1;"	kind:file	line:1
-sparge	../brewer/procedures.py	/^def sparge():$/;"	kind:function	line:129
-sqlite3	../brewer/recipe.py	/^import sqlite3$/;"	kind:namespace	line:3
 status_table	../brewer/controller.py	/^    def status_table(self):$/;"	kind:member	line:95
-store	../brewer/recipe.py	/^    def store(self):$/;"	kind:member	line:15
 str116	../brewer/controller.py	/^import str116$/;"	kind:namespace	line:1
 str116.py	../brewer/str116.py	1;"	kind:file	line:1
 strike_temp_calculator.py	../brewer/strike_temp_calculator.py	1;"	kind:file	line:1
@@ -117,7 +97,6 @@ sv	../brewer/controller.py	/^    def sv(self):$/;"	kind:member	line:76
 switchAddress	../brewer/settings.py	/^switchAddress = 2$/;"	kind:variable	line:9
 sys	../brewer/strike_temp_calculator.py	/^import sys$/;"	kind:namespace	line:2
 sys	../tests/test_controller.py	/^import sys$/;"	kind:namespace	line:1
-sys	../tests/test_recipe.py	/^import sys$/;"	kind:namespace	line:2
 sys	../tests/test_slack.py	/^import sys$/;"	kind:namespace	line:3
 tearDown	../tests/test_controller.py	/^    def tearDown(self):$/;"	kind:member	line:94
 test_addresses	../tests/test_settings.py	/^    def test_addresses(self):$/;"	kind:member	line:11
@@ -137,7 +116,6 @@ test_pid_status_types	../tests/test_controller.py	/^    def test_pid_status_type
 test_port	../tests/test_settings.py	/^    def test_port(self):$/;"	kind:member	line:8
 test_pump	../tests/test_controller.py	/^    def test_pump(self):$/;"	kind:member	line:62
 test_pv	../tests/test_controller.py	/^    def test_pv(self):$/;"	kind:member	line:77
-test_recipe.py	../tests/test_recipe.py	1;"	kind:file	line:1
 test_relay_safeguard	../tests/test_controller.py	/^    def test_relay_safeguard(self):$/;"	kind:member	line:87
 test_relay_status	../tests/test_controller.py	/^    def test_relay_status(self):$/;"	kind:member	line:15
 test_relays	../tests/test_settings.py	/^    def test_relays(self):$/;"	kind:member	line:27
@@ -152,14 +130,12 @@ test_sv	../tests/test_controller.py	/^    def test_sv(self):$/;"	kind:member	lin
 test_timeout	../tests/test_settings.py	/^    def test_timeout(self):$/;"	kind:member	line:18
 test_watch	../tests/test_controller.py	/^    def test_watch(self):$/;"	kind:member	line:80
 time	../brewer/controller.py	/^import time$/;"	kind:namespace	line:4
-time	../brewer/procedures.py	/^import time$/;"	kind:namespace	line:4
 time	../brewer/str116.py	/^import time$/;"	kind:namespace	line:4
 timeout	../brewer/settings.py	/^timeout = 2$/;"	kind:variable	line:13
-top_off	../brewer/procedures.py	/^def top_off():$/;"	kind:function	line:157
 unittest	../tests/test_controller.py	/^import unittest$/;"	kind:namespace	line:3
-unittest	../tests/test_recipe.py	/^import unittest$/;"	kind:namespace	line:4
 unittest	../tests/test_settings.py	/^import unittest$/;"	kind:namespace	line:2
 unittest	../tests/test_slack.py	/^import unittest$/;"	kind:namespace	line:1
 unittest	../tests/test_strike_temp_calculator.py	/^import unittest$/;"	kind:namespace	line:2
-vars	../brewer/procedures.py	/^vars = {$/;"	kind:variable	line:9
+url	../setup.py	/^    url='https:\/\/github.com\/llamicron\/brewer',$/;"	kind:variable	line:10
+version	../setup.py	/^    version='0.1',$/;"	kind:variable	line:6
 watch	../brewer/controller.py	/^    def watch(self):$/;"	kind:member	line:88

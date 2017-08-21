@@ -2,3 +2,4 @@ slacker
 minimalmodbus
 terminaltables
 serial
+binascii

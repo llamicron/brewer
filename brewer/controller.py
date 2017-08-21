@@ -29,8 +29,19 @@ class Controller:
             self.omega.run()
         else:
             self.omega.stop()
-        return True
 
+        # This is a workaround that doesn't work :(
+        # while True:
+        #     try:
+        #         if state == 1:
+        #             self.omega.run()
+        #         else:
+        #             self.omega.stop()
+        #     except IOError:
+        #         time.sleep(0.8)
+        #         continue
+        #     break
+        return True
 
     def hlt(self, state):
         self._safegaurd_state(state)
