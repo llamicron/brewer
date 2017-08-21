@@ -1,10 +1,4 @@
 {
-  "tests/test_controller.py::ControllerTestCase": true, 
-  "tests/test_controller.py::ControllerTestCase::test_pid": true, 
-  "tests/test_controller.py::ControllerTestCase::test_pid_status_types": true, 
-  "tests/test_controller.py::ControllerTestCase::test_pv": true, 
-  "tests/test_controller.py::ControllerTestCase::test_status_table": true, 
-  "tests/test_controller.py::ControllerTestCase::test_tests": true, 
-  "tests/test_controller.py::ControllerTestCase::test_watch": true, 
-  "tests/test_recipe.py::RecipeTestCase": true
+  "tests/test_controller.py::ControllerTestCase::test_relay_config": true, 
+  "tests/test_controller.py::ControllerTestCase::test_tests": true
 }

@@ -24,17 +24,18 @@ class Controller:
         }
 
     def pid(self, state):
-        if not isinstance(state, int):
-            raise ValueError("State should be an integer" + str(type(state)) + " given")
+        self._safegaurd_state(state)
         if state == 1:
             self.omega.run()
         else:
             self.omega.stop()
+        return True
 
 
     def hlt(self, state):
         self._safegaurd_state(state)
         self.set_relay(relays["hlt"], state)
+        return True
 
     def hlt_to(self, location):
         if location == "mash":
@@ -63,12 +64,14 @@ class Controller:
     def pump(self, state):
         self._safegaurd_state(state)
         self.set_relay(relays['pump'], state)
+        return True
 
     def _safegaurd_state(self, state):
         if not isinstance(state, int):
             raise ValueError("Relay State needs to be an integer, " + str(type(state)) + " given.")
         if state < 0 or state > 1:
             raise ValueError("State needs to be integer 0 or 1, " + str(state) + " given.")
+        return True
 
     def sv(self):
         return float(self.omega.get_setpoint())
@@ -77,13 +80,14 @@ class Controller:
         if not isinstance(temp, int) and not isinstance(temp, float):
             raise ValueError("Temp argument needs to be a float or integer, " + str(type(temp)) + " given")
         self.omega.set_setpoint(temp)
+        return self.sv()
 
     def pv(self):
         return float(self.omega.get_pv())
 
     def watch(self):
         while self.pv() <= self.sv():
-            time.sleep(2)
+            time.sleep(2) # :nocov:
 
         self.slack.send("PV is now at " + str(self.pv()) + " f")
         return True
@@ -97,7 +101,3 @@ class Controller:
             ["sv", str(self.sv())]
         ])
         return status
-
-    def relay_config(self, config):
-        for relay, state in config.iteritems():
-            pass

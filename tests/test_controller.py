@@ -1,12 +1,9 @@
 import sys
 import os
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import unittest
 from terminaltables import AsciiTable
-from settings import relays
-from controller import Controller
-
-
+from ..brewer.settings import relays
+from ..brewer.controller import Controller
 
 class ControllerTestCase(unittest.TestCase):
     def setUp(self):
@@ -33,19 +30,17 @@ class ControllerTestCase(unittest.TestCase):
         assert isinstance(self.con.pid_status()["pv"], float)
         assert isinstance(self.con.pid_status()["sv"], float)
 
+    def test_pid(self):
+        self.con.pid(1)
+        assert self.con.pid_status()['pid_running']
+        self.con.pid(0)
+        assert not self.con.pid_status()['pid_running']
+
     def test_hlt(self):
         self.con.hlt(0)
         assert not self.con.relay_status(relays["hlt"])
         self.con.hlt(1)
         assert self.con.relay_status(relays["hlt"])
-
-    def test_rims_to(self):
-        self.con.rims_to("mash")
-        assert self.con.relay_status(relays["rimsToMash"])
-        self.con.rims_to("boil")
-        assert not self.con.relay_status(relays["rimsToMash"])
-        with self.assertRaises(ValueError):
-            self.con.rims_to("Hogwarts")
 
     def test_hlt_to(self):
         self.con.hlt_to("mash")
@@ -55,6 +50,15 @@ class ControllerTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.con.hlt_to("Narnia")
 
+    def test_rims_to(self):
+        self.con.rims_to("mash")
+        assert self.con.relay_status(relays["rimsToMash"])
+        self.con.rims_to("boil")
+        assert not self.con.relay_status(relays["rimsToMash"])
+        with self.assertRaises(ValueError):
+            self.con.rims_to("Hogwarts")
+
+
     def test_pump(self):
         self.con.pump(1)
         assert self.con.pump_status()
@@ -62,7 +66,6 @@ class ControllerTestCase(unittest.TestCase):
         assert not self.con.pump_status()
         with self.assertRaises(ValueError):
             self.con.pump("turn it on, damnit")
-
 
     def test_sv(self):
         assert isinstance(self.con.sv(), float)
@@ -81,11 +84,12 @@ class ControllerTestCase(unittest.TestCase):
     def test_status_table(self):
         assert isinstance(self.con.status_table(), AsciiTable)
 
-    def test_pid(self):
-        self.con.pid(1)
-        assert self.con.pid_status()['pid_running']
-        self.con.pid(0)
-        assert not self.con.pid_status()['pid_running']
+    def test_relay_safeguard(self):
+        with self.assertRaises(ValueError):
+            self.con.hlt(6)
+            self.con.hlt(-4)
+
+
 
     def tearDown(self):
         self.con.pump(0)

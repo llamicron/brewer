@@ -1,6 +1,6 @@
 from controller import Controller
 from slack import BrewerBot
-from brewcalculators import calc_strike_temp
+from strike_temp_calculator import calc_strike_temp
 import time
 
 con = Controller()
