@@ -6,17 +6,12 @@ import settings
 I know this is messy, but I've been having problems with minimalmodbus for weeks and the author has abandoned it.
 This is my best option
 """
-class Omega(OmegaCN7500):
+
+class Omega():
     def __init__(self, port, address, baudrate=None, timeout=None):
-        if not baudrate:
-            baudrate = settings.baudRate
-
-        if not timeout:
-            timeout = settings.timeout
-
-        self.omega = OmegaCN7500(port, address)
-        self.omega.serial.baudrate = baudrate
-        self.omega.serial.timeout = timeout
+        self.instrument = OmegaCN7500(port, address)
+        self.instrument.serial.baudrate = baudrate if baudrate else settings.baudRate
+        self.instrument.serial.timeout = timeout if timeout else settings.timeout
         return None
 
     def safeguard(self, item, types):
@@ -28,45 +23,45 @@ class Omega(OmegaCN7500):
     def pv(self):
         while True:
             try:
-                return float(self.omega.get_pv())
-            except IOError:
+                return float(self.instrument.get_pv())
+            except IOError: # pragma: no cover - This is hard to force
                 continue
 
     def sv(self):
         while True:
             try:
-                return float(self.omega.get_setpoint())
-            except IOError:
+                return float(self.instrument.get_setpoint())
+            except IOError: # pragma: no cover - This is hard to force
                 continue
 
     def set_sv(self, temp):
         while True:
             try:
                 self.safeguard(temp, [int, float])
-                self.omega.set_setpoint(temp)
+                self.instrument.set_setpoint(temp)
                 return True
-            except IOError:
+            except IOError: # pragma: no cover - This is hard to force
                 continue
 
-    def pid_running(self):
+    def is_running(self):
         while True:
             try:
-                return self.omega.is_running()
-            except IOError:
+                return self.instrument.is_running()
+            except IOError: # pragma: no cover - This is hard to force
                 continue
 
     def run(self):
         while True:
             try:
-                self.omega.run()
+                self.instrument.run()
                 return True
-            except IOError:
+            except IOError: # pragma: no cover - This is hard to force
                 continue
 
     def stop(self):
         while True:
             try:
-                self.omega.stop()
+                self.instrument.stop()
                 return True
-            except IOError:
+            except IOError: # pragma: no cover - This is hard to force
                 continue
