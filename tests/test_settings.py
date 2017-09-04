@@ -16,7 +16,7 @@ class SettingsTestCase(unittest.TestCase):
         assert isinstance(settings.baudRate, int)
 
     def test_timeout(self):
-        assert isinstance(settings.timeout, int)
+        assert isinstance(settings.timeout, float)
 
     def test_bytes(self):
         assert isinstance(settings.MA0, str)

@@ -10,7 +10,7 @@ switchAddress = 2
 
 baudRate = 19200
 
-timeout = 2
+timeout = 0.05
 
 #master start byte
 MA0 = '55'

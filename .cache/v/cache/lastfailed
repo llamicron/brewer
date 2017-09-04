@@ -1,5 +1,9 @@
 {
+  "tests/test_controller.py::ControllerTestCase::test_pid": true, 
+  "tests/test_controller.py::ControllerTestCase::test_pid_status": true, 
+  "tests/test_controller.py::ControllerTestCase::test_pid_status_types": true, 
   "tests/test_controller.py::ControllerTestCase::test_relay_config": true, 
+  "tests/test_controller.py::ControllerTestCase::test_status_table": true, 
   "tests/test_controller.py::ControllerTestCase::test_tests": true, 
   "tests/test_recipe.py": true
 }
