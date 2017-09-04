@@ -1,7 +1,6 @@
 from brewer.controller import Controller
 from brewer.slack import BrewerBot
-from brewer.recipe import Recipe
-import brewer.procedures
+from brewer.version import VERSION
 
 import code
 
@@ -10,6 +9,7 @@ bot = BrewerBot()
 
 
 def main():
+    print("Brewer version %s" % VERSION)
     code.InteractiveConsole(locals=globals()).interact()
 
 

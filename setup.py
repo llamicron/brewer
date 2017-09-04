@@ -1,9 +1,10 @@
 from distutils.core import setup
+from brewer.version import VERSION
 
 setup(
     name='brewer',
     packages=['brewer'],
-    version='0.1',
+    version=VERSION,
     description='A package to control our brew rig',
     author='Luke Sweeney',
     author_email='luke@thesweeneys.org',

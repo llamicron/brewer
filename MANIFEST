@@ -4,9 +4,9 @@ setup.cfg
 setup.py
 brewer/__init__.py
 brewer/controller.py
-brewer/procedures.py
-brewer/recipe.py
+brewer/omega.py
 brewer/settings.py
 brewer/slack.py
 brewer/str116.py
 brewer/strike_temp_calculator.py
+brewer/version.py
