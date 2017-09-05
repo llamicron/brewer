@@ -39,7 +39,7 @@ __init__.py	../__init__.py	1;"	kind:file	line:1
 __init__.py	../brewer/__init__.py	1;"	kind:file	line:1
 __init__.py	../tests/__init__.py	1;"	kind:file	line:1
 _get_checksum	../brewer/str116.py	/^def _get_checksum(data):$/;"	kind:function	line:44
-_safegaurd_state	../brewer/controller.py	/^    def _safegaurd_state(self, state):$/;"	kind:function	line:93
+_safegaurd_state	../brewer/controller.py	/^    def _safegaurd_state(self, state):$/;"	kind:member	line:77
 _write_message	../brewer/str116.py	/^def _write_message(data):$/;"	kind:function	line:8
 _write_message_with_response	../brewer/str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:23
 author	../docs/source/conf.py	/^author = u'Luke Sweeney'$/;"	kind:variable	line:51
@@ -91,9 +91,9 @@ pid_running	../brewer/controller.py	/^    def pid_running(self):$/;"	kind:member
 pid_status	../brewer/controller.py	/^    def pid_status(self):$/;"	kind:member	line:28
 port	../brewer/settings.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:4
 project	../docs/source/conf.py	/^project = u'brewer'$/;"	kind:variable	line:49
-pump	../brewer/controller.py	/^    def pump(self, state):$/;"	kind:function	line:88
-pump_status	../brewer/controller.py	/^    def pump_status(self):$/;"	kind:function	line:85
-pv	../brewer/controller.py	/^    def pv(self):$/;"	kind:function	line:108
+pump	../brewer/controller.py	/^    def pump(self, state):$/;"	kind:member	line:72
+pump_status	../brewer/controller.py	/^    def pump_status(self):$/;"	kind:member	line:69
+pv	../brewer/controller.py	/^    def pv(self):$/;"	kind:member	line:92
 pv	../brewer/omega.py	/^    def pv(self):$/;"	kind:member	line:23
 pygments_style	../docs/source/conf.py	/^pygments_style = 'sphinx'$/;"	kind:variable	line:75
 relay_status	../brewer/controller.py	/^    def relay_status(self, relay_num):$/;"	kind:member	line:19
@@ -101,7 +101,7 @@ relays	../brewer/settings.py	/^relays = {$/;"	kind:variable	line:29
 relays	../tests/test_controller.py	/^from ..brewer.settings import relays$/;"	kind:namespace	line:5
 release	../docs/source/conf.py	/^release = u'0.2'$/;"	kind:variable	line:60
 rimsAddress	../brewer/settings.py	/^rimsAddress = 1$/;"	kind:variable	line:7
-rims_to	../brewer/controller.py	/^    def rims_to(self, location):$/;"	kind:function	line:67
+rims_to	../brewer/controller.py	/^    def rims_to(self, location):$/;"	kind:member	line:59
 run	../brewer/omega.py	/^    def run(self):$/;"	kind:member	line:53
 safeguard	../brewer/omega.py	/^    def safeguard(self, item, types):$/;"	kind:member	line:17
 send	../brewer/slack.py	/^    def send(self, message):$/;"	kind:member	line:15
@@ -112,7 +112,7 @@ setUp	../tests/test_slack.py	/^    def setUp(self):$/;"	kind:member	line:7
 set_baudrate	../brewer/str116.py	/^def set_baudrate():$/;"	kind:function	line:104
 set_relay	../brewer/controller.py	/^    def set_relay(self, relay_num, state):$/;"	kind:member	line:22
 set_relay	../brewer/str116.py	/^def set_relay(relaynumber, onoff):$/;"	kind:function	line:49
-set_sv	../brewer/controller.py	/^    def set_sv(self, temp):$/;"	kind:function	line:103
+set_sv	../brewer/controller.py	/^    def set_sv(self, temp):$/;"	kind:member	line:87
 set_sv	../brewer/omega.py	/^    def set_sv(self, temp):$/;"	kind:member	line:37
 settings	../brewer/controller.py	/^import settings$/;"	kind:namespace	line:2
 settings	../brewer/omega.py	/^import settings$/;"	kind:namespace	line:3
@@ -126,12 +126,12 @@ slack.py	../brewer/slack.py	1;"	kind:file	line:1
 source_parsers	../docs/source/conf.py	/^source_parsers = {$/;"	kind:variable	line:172
 source_suffix	../docs/source/conf.py	/^source_suffix = '.md'$/;"	kind:variable	line:43
 source_suffix	../docs/source/conf.py	/^source_suffix = ['.rst', '.md']$/;"	kind:variable	line:176
-status_table	../brewer/controller.py	/^    def status_table(self):$/;"	kind:function	line:118
+status_table	../brewer/controller.py	/^    def status_table(self):$/;"	kind:member	line:102
 stop	../brewer/omega.py	/^    def stop(self):$/;"	kind:member	line:61
 str116	../brewer/controller.py	/^import str116$/;"	kind:namespace	line:1
 str116.py	../brewer/str116.py	1;"	kind:file	line:1
 strike_temp_calculator.py	../brewer/strike_temp_calculator.py	1;"	kind:file	line:1
-sv	../brewer/controller.py	/^    def sv(self):$/;"	kind:function	line:100
+sv	../brewer/controller.py	/^    def sv(self):$/;"	kind:member	line:84
 sv	../brewer/omega.py	/^    def sv(self):$/;"	kind:member	line:30
 switchAddress	../brewer/settings.py	/^switchAddress = 2$/;"	kind:variable	line:9
 sys	../brewer/strike_temp_calculator.py	/^import sys$/;"	kind:namespace	line:2
@@ -191,4 +191,4 @@ url	../setup.py	/^    url='https:\/\/github.com\/llamicron\/brewer',$/;"	kind:va
 version	../docs/source/conf.py	/^version = u'0.2'$/;"	kind:variable	line:58
 version	../setup.py	/^    version=VERSION,$/;"	kind:variable	line:7
 version.py	../brewer/version.py	1;"	kind:file	line:1
-watch	../brewer/controller.py	/^    def watch(self):$/;"	kind:function	line:111
+watch	../brewer/controller.py	/^    def watch(self):$/;"	kind:member	line:95
