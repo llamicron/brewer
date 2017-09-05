@@ -1,3 +1,9 @@
-slacker
-minimalmodbus
-terminaltables
+certifi==2017.7.27.1
+chardet==3.0.4
+idna==2.6
+MinimalModbus==0.7
+pyserial==3.4
+requests==2.18.4
+slacker==0.9.60
+terminaltables==3.1.0
+urllib3==1.22

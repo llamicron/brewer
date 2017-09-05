@@ -1,8 +1,7 @@
 import unittest
 import os
 import sys
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
-from slack import BrewerBot
+from ..brewer.slack import BrewerBot
 
 class SlackTestCase(unittest.TestCase):
     def setUp(self):

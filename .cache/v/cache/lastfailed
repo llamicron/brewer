@@ -1,4 +1,0 @@
-{
-  "tests/test_controller.py::ControllerTestCase::test_sv": true, 
-  "tests/test_controller.py::ControllerTestCase::test_tests": true
-}
