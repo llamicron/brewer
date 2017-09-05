@@ -2,7 +2,7 @@ build:
 	python setup.py sdist
 
 upload:
-	python setup.py sdist uploa
+	twine upload dist/*
 
 clean:
 	rm -rf dist/

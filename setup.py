@@ -9,7 +9,7 @@ setup(
     author='Luke Sweeney',
     author_email='luke@thesweeneys.org',
     url='https://github.com/llamicron/brewer',
-    download_url='https://github.com/llamicron/brewer/archive/0.1.tar.gz',
+    download_url="https://github.com/llamicron/brewer/archive/%s.tar.gz" % VERSION,
     keywords=['beer', 'python', 'brewing'],
     classifiers=[],
 )
