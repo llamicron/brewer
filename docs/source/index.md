@@ -1,2 +1,5 @@
 # Brewer
 
+.. toctree:
+
+   Test

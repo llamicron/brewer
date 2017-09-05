@@ -46,38 +46,22 @@ class Controller:
         return True
 
     def hlt_to(self, location):
-<<<<<<< HEAD:controller.py
-        if location == "boil":
-            self.set_relay(relays["hltToMash"], 1)
-            return True
-        elif location == "mash":
-            self.set_relay(relays["hltToMash"], 0)
-=======
         if location == "mash":
             self.set_relay(settings.relays["hltToMash"], 1)
             return True
         elif location  == "boil":
             self.set_relay(settings.relays["hltToMash"], 0)
->>>>>>> dev:brewer/controller.py
             return True
         else:
             raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
 
 
     def rims_to(self, location):
-<<<<<<< HEAD:controller.py
-        if location == "boil":
-            self.set_relay(relays["rimsToMash"], 1)
-            return True
-        elif location == "mash":
-            self.set_relay(relays["rimsToMash"], 0)
-=======
         if location == "mash":
             self.set_relay(settings.relays["rimsToMash"], 1)
             return True
         elif location == "boil":
             self.set_relay(settings.relays["rimsToMash"], 0)
->>>>>>> dev:brewer/controller.py
             return True
         else:
             raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
