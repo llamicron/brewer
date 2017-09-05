@@ -1,3 +1,5 @@
+.PHONY: docs
+
 build:
 	python setup.py sdist
 
@@ -8,4 +10,7 @@ clean:
 	rm -rf dist/
 	rm -rf htmlcov/
 
+docs:
+	$(MAKE) -C docs html
+	$(MAKE) -C docs server
 
