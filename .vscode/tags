@@ -66,17 +66,17 @@ get_relays_status	../brewer/str116.py	/^def get_relays_status():$/;"	kind:functi
 get_token_from_file	../brewer/slack.py	/^    def get_token_from_file(self):$/;"	kind:member	line:10
 hlt	../brewer/controller.py	/^    def hlt(self, state):$/;"	kind:member	line:43
 hlt_to	../brewer/controller.py	/^    def hlt_to(self, location):$/;"	kind:member	line:48
-html_sidebars	../docs/source/conf.py	/^html_sidebars = {$/;"	kind:variable	line:104
-html_static_path	../docs/source/conf.py	/^html_static_path = ['_static']$/;"	kind:variable	line:97
-html_theme	../docs/source/conf.py	/^html_theme = 'alabaster'$/;"	kind:variable	line:86
-htmlhelp_basename	../docs/source/conf.py	/^htmlhelp_basename = 'brewerdoc'$/;"	kind:variable	line:118
+html_sidebars	../docs/source/conf.py	/^html_sidebars = {$/;"	kind:variable	line:105
+html_static_path	../docs/source/conf.py	/^html_static_path = ['_static']$/;"	kind:variable	line:98
+html_theme	../docs/source/conf.py	/^html_theme = 'default'$/;"	kind:variable	line:87
+htmlhelp_basename	../docs/source/conf.py	/^htmlhelp_basename = 'brewerdoc'$/;"	kind:variable	line:119
 is_running	../brewer/omega.py	/^    def is_running(self):$/;"	kind:member	line:46
 keywords	../setup.py	/^    keywords=['beer', 'python', 'brewing'],$/;"	kind:variable	line:13
 language	../docs/source/conf.py	/^language = None$/;"	kind:variable	line:67
-latex_documents	../docs/source/conf.py	/^latex_documents = [$/;"	kind:variable	line:144
-latex_elements	../docs/source/conf.py	/^latex_elements = {$/;"	kind:variable	line:123
+latex_documents	../docs/source/conf.py	/^latex_documents = [$/;"	kind:variable	line:145
+latex_elements	../docs/source/conf.py	/^latex_elements = {$/;"	kind:variable	line:124
 main	../brewer.py	/^def main():$/;"	kind:function	line:11
-man_pages	../docs/source/conf.py	/^man_pages = [$/;"	kind:variable	line:154
+man_pages	../docs/source/conf.py	/^man_pages = [$/;"	kind:variable	line:155
 master_doc	../docs/source/conf.py	/^master_doc = 'index'$/;"	kind:variable	line:46
 minimalmodbus	../brewer/omega.py	/^import minimalmodbus$/;"	kind:namespace	line:2
 name	../setup.py	/^    name='brewer',$/;"	kind:variable	line:5
@@ -123,9 +123,9 @@ settings.py	../brewer/settings.py	1;"	kind:file	line:1
 setup	../setup.py	/^from distutils.core import setup$/;"	kind:namespace	line:1
 setup.py	../setup.py	1;"	kind:file	line:1
 slack.py	../brewer/slack.py	1;"	kind:file	line:1
-source_parsers	../docs/source/conf.py	/^source_parsers = {$/;"	kind:variable	line:172
+source_parsers	../docs/source/conf.py	/^source_parsers = {$/;"	kind:variable	line:173
 source_suffix	../docs/source/conf.py	/^source_suffix = '.md'$/;"	kind:variable	line:43
-source_suffix	../docs/source/conf.py	/^source_suffix = ['.rst', '.md']$/;"	kind:variable	line:176
+source_suffix	../docs/source/conf.py	/^source_suffix = ['.rst', '.md']$/;"	kind:variable	line:177
 status_table	../brewer/controller.py	/^    def status_table(self):$/;"	kind:member	line:102
 stop	../brewer/omega.py	/^    def stop(self):$/;"	kind:member	line:61
 str116	../brewer/controller.py	/^import str116$/;"	kind:namespace	line:1
@@ -177,7 +177,7 @@ test_sv	../tests/test_controller.py	/^    def test_sv(self):$/;"	kind:function	l
 test_sv	../tests/test_omega.py	/^    def test_sv(self):$/;"	kind:member	line:19
 test_timeout	../tests/test_settings.py	/^    def test_timeout(self):$/;"	kind:member	line:18
 test_watch	../tests/test_controller.py	/^    def test_watch(self):$/;"	kind:function	line:90
-texinfo_documents	../docs/source/conf.py	/^texinfo_documents = [$/;"	kind:variable	line:165
+texinfo_documents	../docs/source/conf.py	/^texinfo_documents = [$/;"	kind:variable	line:166
 time	../brewer/controller.py	/^import time$/;"	kind:namespace	line:4
 time	../brewer/str116.py	/^import time$/;"	kind:namespace	line:4
 timeout	../brewer/settings.py	/^timeout = 0.05$/;"	kind:variable	line:13

@@ -14,6 +14,8 @@ class Controller:
             settings.timeout
         )
 
+        self.settings = settings
+
         self.slack = BrewerBot()
 
     def relay_status(self, relay_num):
@@ -42,15 +44,15 @@ class Controller:
 
     def hlt(self, state):
         self._safegaurd_state(state)
-        self.set_relay(settings.relays["hlt"], state)
+        self.set_relay(self.settings.relays["hlt"], state)
         return True
 
     def hlt_to(self, location):
         if location == "mash":
-            self.set_relay(settings.relays["hltToMash"], 1)
+            self.set_relay(self.settings.relays["hltToMash"], 1)
             return True
         elif location  == "boil":
-            self.set_relay(settings.relays["hltToMash"], 0)
+            self.set_relay(self.settings.relays["hltToMash"], 0)
             return True
         else:
             raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
@@ -58,20 +60,20 @@ class Controller:
 
     def rims_to(self, location):
         if location == "mash":
-            self.set_relay(settings.relays["rimsToMash"], 1)
+            self.set_relay(self.settings.relays["rimsToMash"], 1)
             return True
         elif location == "boil":
-            self.set_relay(settings.relays["rimsToMash"], 0)
+            self.set_relay(self.settings.relays["rimsToMash"], 0)
             return True
         else:
             raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
 
     def pump_status(self):
-        return self.relay_status(settings.relays["pump"])
+        return self.relay_status(self.settings.relays["pump"])
 
     def pump(self, state):
         self._safegaurd_state(state)
-        self.set_relay(settings.relays['pump'], state)
+        self.set_relay(self.settings.relays['pump'], state)
         return True
 
     def _safegaurd_state(self, state):
