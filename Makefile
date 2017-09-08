@@ -13,9 +13,5 @@ clean:
 	rm -rf dist/
 	rm -rf htmlcov/
 
-docs:
-	$(MAKE) -C docs html
-	$(MAKE) -C docs server
-
 test:
 	pytest --cov-report html --cov=brewer/  tests/

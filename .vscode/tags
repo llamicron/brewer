@@ -11,7 +11,6 @@ BrewerBot	../brewer/controller.py	/^from slack import BrewerBot$/;"	kind:namespa
 BrewerBot	../brewer/slack.py	/^class BrewerBot(Slacker):$/;"	kind:class	line:4
 BrewerBot	../tests/test_slack.py	/^from ..brewer.slack import BrewerBot$/;"	kind:namespace	line:4
 CN	../brewer/settings.py	/^CN = '02'$/;"	kind:variable	line:25
-CommonMarkParser	../docs/source/conf.py	/^from recommonmark.parser import CommonMarkParser$/;"	kind:namespace	line:22
 Controller	../brewer.py	/^from brewer.controller import Controller$/;"	kind:namespace	line:1
 Controller	../brewer/controller.py	/^class Controller:$/;"	kind:class	line:8
 Controller	../tests/test_controller.py	/^from ..brewer.controller import Controller$/;"	kind:namespace	line:6
@@ -30,7 +29,7 @@ SlackTestCase	../tests/test_slack.py	/^class SlackTestCase(unittest.TestCase):$/
 Slacker	../brewer/slack.py	/^from slacker import Slacker$/;"	kind:namespace	line:1
 StrikeTempCalculator	../tests/test_strike_temp_calculator.py	/^class StrikeTempCalculator(unittest.TestCase):$/;"	kind:class	line:4
 VERSION	../brewer.py	/^from brewer.version import VERSION$/;"	kind:namespace	line:3
-VERSION	../brewer/version.py	/^VERSION="0.2.1"$/;"	kind:variable	line:1
+VERSION	../brewer/version.py	/^VERSION="0.2.4"$/;"	kind:variable	line:1
 VERSION	../setup.py	/^from brewer.version import VERSION$/;"	kind:namespace	line:2
 __init__	../brewer/controller.py	/^    def __init__(self):$/;"	kind:member	line:9
 __init__	../brewer/omega.py	/^    def __init__(self, port, address, baudrate=None, timeout=None):$/;"	kind:member	line:11
@@ -39,10 +38,9 @@ __init__.py	../__init__.py	1;"	kind:file	line:1
 __init__.py	../brewer/__init__.py	1;"	kind:file	line:1
 __init__.py	../tests/__init__.py	1;"	kind:file	line:1
 _get_checksum	../brewer/str116.py	/^def _get_checksum(data):$/;"	kind:function	line:44
-_safegaurd_state	../brewer/controller.py	/^    def _safegaurd_state(self, state):$/;"	kind:member	line:77
+_safegaurd_state	../brewer/controller.py	/^    def _safegaurd_state(self, state):$/;"	kind:member	line:79
 _write_message	../brewer/str116.py	/^def _write_message(data):$/;"	kind:function	line:8
 _write_message_with_response	../brewer/str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:23
-author	../docs/source/conf.py	/^author = u'Luke Sweeney'$/;"	kind:variable	line:51
 author	../setup.py	/^    author='Luke Sweeney',$/;"	kind:variable	line:9
 author_email	../setup.py	/^    author_email='luke@thesweeneys.org',$/;"	kind:variable	line:10
 baudRate	../brewer/settings.py	/^baudRate = 19200$/;"	kind:variable	line:11
@@ -53,31 +51,18 @@ calc_strike_temp	../brewer/strike_temp_calculator.py	/^def calc_strike_temp(Wate
 calc_strike_temp	../tests/test_strike_temp_calculator.py	/^from ..brewer.strike_temp_calculator import calc_strike_temp$/;"	kind:namespace	line:1
 classifiers	../setup.py	/^    classifiers=[],$/;"	kind:variable	line:14
 code	../brewer.py	/^import code$/;"	kind:namespace	line:5
-conf.py	../docs/source/conf.py	1;"	kind:file	line:1
 controller	../brewer.py	/^controller = Controller()$/;"	kind:variable	line:7
 controller.py	../brewer/controller.py	1;"	kind:file	line:1
-copyright	../docs/source/conf.py	/^copyright = u'2017, Luke Sweeney'$/;"	kind:variable	line:50
 description	../setup.py	/^    description='A package to control our brew rig',$/;"	kind:variable	line:8
 download_url	../setup.py	/^    download_url="https:\/\/github.com\/llamicron\/brewer\/archive\/%s.tar.gz" % VERSION,$/;"	kind:variable	line:12
-exclude_patterns	../docs/source/conf.py	/^exclude_patterns = []$/;"	kind:variable	line:72
-extensions	../docs/source/conf.py	/^extensions = []$/;"	kind:variable	line:34
 get_relay	../brewer/str116.py	/^def get_relay(relaynumber):$/;"	kind:function	line:65
 get_relays_status	../brewer/str116.py	/^def get_relays_status():$/;"	kind:function	line:78
 get_token_from_file	../brewer/slack.py	/^    def get_token_from_file(self):$/;"	kind:member	line:10
-hlt	../brewer/controller.py	/^    def hlt(self, state):$/;"	kind:member	line:43
-hlt_to	../brewer/controller.py	/^    def hlt_to(self, location):$/;"	kind:member	line:48
-html_sidebars	../docs/source/conf.py	/^html_sidebars = {$/;"	kind:variable	line:105
-html_static_path	../docs/source/conf.py	/^html_static_path = ['_static']$/;"	kind:variable	line:98
-html_theme	../docs/source/conf.py	/^html_theme = 'default'$/;"	kind:variable	line:87
-htmlhelp_basename	../docs/source/conf.py	/^htmlhelp_basename = 'brewerdoc'$/;"	kind:variable	line:119
+hlt	../brewer/controller.py	/^    def hlt(self, state):$/;"	kind:member	line:45
+hlt_to	../brewer/controller.py	/^    def hlt_to(self, location):$/;"	kind:member	line:50
 is_running	../brewer/omega.py	/^    def is_running(self):$/;"	kind:member	line:46
 keywords	../setup.py	/^    keywords=['beer', 'python', 'brewing'],$/;"	kind:variable	line:13
-language	../docs/source/conf.py	/^language = None$/;"	kind:variable	line:67
-latex_documents	../docs/source/conf.py	/^latex_documents = [$/;"	kind:variable	line:145
-latex_elements	../docs/source/conf.py	/^latex_elements = {$/;"	kind:variable	line:124
 main	../brewer.py	/^def main():$/;"	kind:function	line:11
-man_pages	../docs/source/conf.py	/^man_pages = [$/;"	kind:variable	line:155
-master_doc	../docs/source/conf.py	/^master_doc = 'index'$/;"	kind:variable	line:46
 minimalmodbus	../brewer/omega.py	/^import minimalmodbus$/;"	kind:namespace	line:2
 name	../setup.py	/^    name='brewer',$/;"	kind:variable	line:5
 omega.py	../brewer/omega.py	1;"	kind:file	line:1
@@ -86,22 +71,19 @@ os	../brewer/str116.py	/^import os$/;"	kind:namespace	line:6
 os	../tests/test_controller.py	/^import os$/;"	kind:namespace	line:2
 os	../tests/test_slack.py	/^import os$/;"	kind:namespace	line:2
 packages	../setup.py	/^    packages=['brewer'],$/;"	kind:variable	line:6
-pid	../brewer/controller.py	/^    def pid(self, state):$/;"	kind:member	line:35
-pid_running	../brewer/controller.py	/^    def pid_running(self):$/;"	kind:member	line:25
-pid_status	../brewer/controller.py	/^    def pid_status(self):$/;"	kind:member	line:28
+pid	../brewer/controller.py	/^    def pid(self, state):$/;"	kind:member	line:37
+pid_running	../brewer/controller.py	/^    def pid_running(self):$/;"	kind:member	line:27
+pid_status	../brewer/controller.py	/^    def pid_status(self):$/;"	kind:member	line:30
 port	../brewer/settings.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:4
-project	../docs/source/conf.py	/^project = u'brewer'$/;"	kind:variable	line:49
-pump	../brewer/controller.py	/^    def pump(self, state):$/;"	kind:member	line:72
-pump_status	../brewer/controller.py	/^    def pump_status(self):$/;"	kind:member	line:69
-pv	../brewer/controller.py	/^    def pv(self):$/;"	kind:member	line:92
+pump	../brewer/controller.py	/^    def pump(self, state):$/;"	kind:member	line:74
+pump_status	../brewer/controller.py	/^    def pump_status(self):$/;"	kind:member	line:71
+pv	../brewer/controller.py	/^    def pv(self):$/;"	kind:member	line:94
 pv	../brewer/omega.py	/^    def pv(self):$/;"	kind:member	line:23
-pygments_style	../docs/source/conf.py	/^pygments_style = 'sphinx'$/;"	kind:variable	line:75
-relay_status	../brewer/controller.py	/^    def relay_status(self, relay_num):$/;"	kind:member	line:19
+relay_status	../brewer/controller.py	/^    def relay_status(self, relay_num):$/;"	kind:member	line:21
 relays	../brewer/settings.py	/^relays = {$/;"	kind:variable	line:29
 relays	../tests/test_controller.py	/^from ..brewer.settings import relays$/;"	kind:namespace	line:5
-release	../docs/source/conf.py	/^release = u'0.2'$/;"	kind:variable	line:60
 rimsAddress	../brewer/settings.py	/^rimsAddress = 1$/;"	kind:variable	line:7
-rims_to	../brewer/controller.py	/^    def rims_to(self, location):$/;"	kind:member	line:59
+rims_to	../brewer/controller.py	/^    def rims_to(self, location):$/;"	kind:member	line:61
 run	../brewer/omega.py	/^    def run(self):$/;"	kind:member	line:53
 safeguard	../brewer/omega.py	/^    def safeguard(self, item, types):$/;"	kind:member	line:17
 send	../brewer/slack.py	/^    def send(self, message):$/;"	kind:member	line:15
@@ -110,9 +92,9 @@ setUp	../tests/test_controller.py	/^    def setUp(self):$/;"	kind:member	line:9
 setUp	../tests/test_omega.py	/^    def setUp(self):$/;"	kind:member	line:7
 setUp	../tests/test_slack.py	/^    def setUp(self):$/;"	kind:member	line:7
 set_baudrate	../brewer/str116.py	/^def set_baudrate():$/;"	kind:function	line:104
-set_relay	../brewer/controller.py	/^    def set_relay(self, relay_num, state):$/;"	kind:member	line:22
+set_relay	../brewer/controller.py	/^    def set_relay(self, relay_num, state):$/;"	kind:member	line:24
 set_relay	../brewer/str116.py	/^def set_relay(relaynumber, onoff):$/;"	kind:function	line:49
-set_sv	../brewer/controller.py	/^    def set_sv(self, temp):$/;"	kind:member	line:87
+set_sv	../brewer/controller.py	/^    def set_sv(self, temp):$/;"	kind:member	line:89
 set_sv	../brewer/omega.py	/^    def set_sv(self, temp):$/;"	kind:member	line:37
 settings	../brewer/controller.py	/^import settings$/;"	kind:namespace	line:2
 settings	../brewer/omega.py	/^import settings$/;"	kind:namespace	line:3
@@ -123,22 +105,18 @@ settings.py	../brewer/settings.py	1;"	kind:file	line:1
 setup	../setup.py	/^from distutils.core import setup$/;"	kind:namespace	line:1
 setup.py	../setup.py	1;"	kind:file	line:1
 slack.py	../brewer/slack.py	1;"	kind:file	line:1
-source_parsers	../docs/source/conf.py	/^source_parsers = {$/;"	kind:variable	line:173
-source_suffix	../docs/source/conf.py	/^source_suffix = '.md'$/;"	kind:variable	line:43
-source_suffix	../docs/source/conf.py	/^source_suffix = ['.rst', '.md']$/;"	kind:variable	line:177
-status_table	../brewer/controller.py	/^    def status_table(self):$/;"	kind:member	line:102
+status_table	../brewer/controller.py	/^    def status_table(self):$/;"	kind:member	line:104
 stop	../brewer/omega.py	/^    def stop(self):$/;"	kind:member	line:61
 str116	../brewer/controller.py	/^import str116$/;"	kind:namespace	line:1
 str116.py	../brewer/str116.py	1;"	kind:file	line:1
 strike_temp_calculator.py	../brewer/strike_temp_calculator.py	1;"	kind:file	line:1
-sv	../brewer/controller.py	/^    def sv(self):$/;"	kind:member	line:84
+sv	../brewer/controller.py	/^    def sv(self):$/;"	kind:member	line:86
 sv	../brewer/omega.py	/^    def sv(self):$/;"	kind:member	line:30
 switchAddress	../brewer/settings.py	/^switchAddress = 2$/;"	kind:variable	line:9
 sys	../brewer/strike_temp_calculator.py	/^import sys$/;"	kind:namespace	line:2
 sys	../tests/test_controller.py	/^import sys$/;"	kind:namespace	line:1
 sys	../tests/test_slack.py	/^import sys$/;"	kind:namespace	line:3
-tearDown	../tests/test_controller.py	/^    def tearDown(self):$/;"	kind:function	line:102
-templates_path	../docs/source/conf.py	/^templates_path = ['_templates']$/;"	kind:variable	line:37
+tearDown	../tests/test_controller.py	/^    def tearDown(self):$/;"	kind:member	line:92
 test_addresses	../tests/test_settings.py	/^    def test_addresses(self):$/;"	kind:member	line:11
 test_baudrate	../tests/test_settings.py	/^    def test_baudrate(self):$/;"	kind:member	line:15
 test_bytes	../tests/test_settings.py	/^    def test_bytes(self):$/;"	kind:member	line:21
@@ -149,7 +127,6 @@ test_debug	../tests/test_settings.py	/^    def test_debug(self):$/;"	kind:member
 test_get_token_from_file	../tests/test_slack.py	/^    def test_get_token_from_file(self):$/;"	kind:member	line:11
 test_has_default_baudrate_and_timeout	../tests/test_omega.py	/^    def test_has_default_baudrate_and_timeout(self):$/;"	kind:member	line:10
 test_hlt	../tests/test_controller.py	/^    def test_hlt(self):$/;"	kind:member	line:39
-test_hlt_to	../tests/test_controller.py	/^    def test_hlt_to(self):$/;"	kind:function	line:62
 test_hlt_to	../tests/test_controller.py	/^    def test_hlt_to(self):$/;"	kind:member	line:45
 test_object_creation	../tests/test_controller.py	/^    def test_object_creation(self):$/;"	kind:member	line:12
 test_omega.py	../tests/test_omega.py	1;"	kind:file	line:1
@@ -158,10 +135,10 @@ test_pid_run_stop_running	../tests/test_omega.py	/^    def test_pid_run_stop_run
 test_pid_status	../tests/test_controller.py	/^    def test_pid_status(self):$/;"	kind:member	line:25
 test_pid_status_types	../tests/test_controller.py	/^    def test_pid_status_types(self):$/;"	kind:member	line:28
 test_port	../tests/test_settings.py	/^    def test_port(self):$/;"	kind:member	line:8
-test_pump	../tests/test_controller.py	/^    def test_pump(self):$/;"	kind:function	line:72
-test_pv	../tests/test_controller.py	/^    def test_pv(self):$/;"	kind:function	line:87
+test_pump	../tests/test_controller.py	/^    def test_pump(self):$/;"	kind:member	line:62
+test_pv	../tests/test_controller.py	/^    def test_pv(self):$/;"	kind:member	line:77
 test_pv	../tests/test_omega.py	/^    def test_pv(self):$/;"	kind:member	line:16
-test_relay_safeguard	../tests/test_controller.py	/^    def test_relay_safeguard(self):$/;"	kind:function	line:97
+test_relay_safeguard	../tests/test_controller.py	/^    def test_relay_safeguard(self):$/;"	kind:member	line:87
 test_relay_status	../tests/test_controller.py	/^    def test_relay_status(self):$/;"	kind:member	line:15
 test_relays	../tests/test_settings.py	/^    def test_relays(self):$/;"	kind:member	line:27
 test_rims_to	../tests/test_controller.py	/^    def test_rims_to(self):$/;"	kind:member	line:53
@@ -171,24 +148,21 @@ test_set_relay	../tests/test_controller.py	/^    def test_set_relay(self):$/;"	k
 test_set_sv	../tests/test_omega.py	/^    def test_set_sv(self):$/;"	kind:member	line:22
 test_settings.py	../tests/test_settings.py	1;"	kind:file	line:1
 test_slack.py	../tests/test_slack.py	1;"	kind:file	line:1
-test_status_table	../tests/test_controller.py	/^    def test_status_table(self):$/;"	kind:function	line:94
+test_status_table	../tests/test_controller.py	/^    def test_status_table(self):$/;"	kind:member	line:84
 test_strike_temp_calculator.py	../tests/test_strike_temp_calculator.py	1;"	kind:file	line:1
-test_sv	../tests/test_controller.py	/^    def test_sv(self):$/;"	kind:function	line:80
+test_sv	../tests/test_controller.py	/^    def test_sv(self):$/;"	kind:member	line:70
 test_sv	../tests/test_omega.py	/^    def test_sv(self):$/;"	kind:member	line:19
 test_timeout	../tests/test_settings.py	/^    def test_timeout(self):$/;"	kind:member	line:18
-test_watch	../tests/test_controller.py	/^    def test_watch(self):$/;"	kind:function	line:90
-texinfo_documents	../docs/source/conf.py	/^texinfo_documents = [$/;"	kind:variable	line:166
+test_watch	../tests/test_controller.py	/^    def test_watch(self):$/;"	kind:member	line:80
 time	../brewer/controller.py	/^import time$/;"	kind:namespace	line:4
 time	../brewer/str116.py	/^import time$/;"	kind:namespace	line:4
 timeout	../brewer/settings.py	/^timeout = 0.05$/;"	kind:variable	line:13
-todo_include_todos	../docs/source/conf.py	/^todo_include_todos = False$/;"	kind:variable	line:78
 unittest	../tests/test_controller.py	/^import unittest$/;"	kind:namespace	line:3
 unittest	../tests/test_omega.py	/^import unittest$/;"	kind:namespace	line:1
 unittest	../tests/test_settings.py	/^import unittest$/;"	kind:namespace	line:2
 unittest	../tests/test_slack.py	/^import unittest$/;"	kind:namespace	line:1
 unittest	../tests/test_strike_temp_calculator.py	/^import unittest$/;"	kind:namespace	line:2
 url	../setup.py	/^    url='https:\/\/github.com\/llamicron\/brewer',$/;"	kind:variable	line:11
-version	../docs/source/conf.py	/^version = u'0.2'$/;"	kind:variable	line:58
 version	../setup.py	/^    version=VERSION,$/;"	kind:variable	line:7
 version.py	../brewer/version.py	1;"	kind:file	line:1
-watch	../brewer/controller.py	/^    def watch(self):$/;"	kind:member	line:95
+watch	../brewer/controller.py	/^    def watch(self):$/;"	kind:member	line:97
