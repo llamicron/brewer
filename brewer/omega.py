@@ -1,4 +1,5 @@
 from omegacn7500 import OmegaCN7500
+from fake_omega import FakeOmega
 import minimalmodbus
 import settings
 
@@ -13,6 +14,11 @@ class Omega():
         self.instrument.serial.baudrate = baudrate if baudrate else settings.baudRate
         self.instrument.serial.timeout = timeout if timeout else settings.timeout
         return None
+
+    @staticmethod
+    def simulator():
+        return FakeOmega()
+
 
     def safeguard(self, item, types):
         for type in types:

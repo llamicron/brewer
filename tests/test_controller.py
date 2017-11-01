@@ -7,10 +7,7 @@ from ..brewer.controller import Controller
 
 class ControllerTestCase(unittest.TestCase):
     def setUp(self):
-        self.con = Controller()
-
-    def test_object_creation(self):
-        assert isinstance(self.con, Controller)
+        self.con = Controller.simulator()
 
     def test_relay_status(self):
         self.con.set_relay(1, 1)

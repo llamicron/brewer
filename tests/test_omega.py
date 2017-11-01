@@ -5,7 +5,8 @@ from ..brewer.omega import Omega
 
 class OmegaTestCase(unittest.TestCase):
     def setUp(self):
-        self.omega = Omega(settings.port, settings.rimsAddress, settings.baudRate, settings.timeout)
+        # self.omega = Omega(settings.port, settings.rimsAddress, settings.baudRate, settings.timeout)
+        self.omega = Omega.simulator()
 
     def test_has_default_baudrate_and_timeout(self):
         omega = Omega(settings.port, settings.rimsAddress)

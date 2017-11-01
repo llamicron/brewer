@@ -1,33 +1,38 @@
-import str116
-import settings
+from fake_omega import FakeOmega
 from slack import BrewerBot
 import time
-from omega import Omega
 from terminaltables import AsciiTable
-from fake_controller import FakeController
+import settings
 
-class Controller:
+"""
+This is just like FakeOmega. It's a simulation of the actual controller.
+"""
+
+class FakeController():
     def __init__(self):
-        self.omega = Omega(
-            settings.port,
-            settings.rimsAddress,
-            settings.baudRate,
-            settings.timeout
-        )
-
+        self.omega = FakeOmega()
         self.settings = settings
-
         self.slack = BrewerBot()
+        self.relays = [True, False, True, True]
 
-    @staticmethod
-    def simulator():
-        return FakeController()
+    def _safegaurd_state(self, state):
+        if not isinstance(state, int):
+            raise ValueError(
+                "Relay State needs to be an integer, " + str(type(state)) + " given.")
+        if state < 0 or state > 1:
+            raise ValueError(
+                "State needs to be integer 0 or 1, " + str(state) + " given.")
+        return True
 
     def relay_status(self, relay_num):
-        return str116.get_relay(relay_num)
+        return self.relays[relay_num]
 
     def set_relay(self, relay_num, state):
-        str116.set_relay(relay_num, state)
+        if state in ['on', 1]:
+            state = True
+        else:
+            state = False
+        self.relays[relay_num] = state
 
     def pid_running(self):
         return self.omega.is_running()
@@ -49,19 +54,19 @@ class Controller:
 
     def hlt(self, state):
         self._safegaurd_state(state)
-        self.set_relay(self.settings.relays["hlt"], state)
+        self.set_relay(self.settings.relays['hlt'], state)
         return True
 
     def hlt_to(self, location):
         if location == "mash":
             self.set_relay(self.settings.relays["hltToMash"], 1)
             return True
-        elif location  == "boil":
+        elif location == "boil":
             self.set_relay(self.settings.relays["hltToMash"], 0)
             return True
         else:
-            raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
-
+            raise ValueError(
+                "Location unknown: valid locations are 'mash' and 'boil'")
 
     def rims_to(self, location):
         if location == "mash":
@@ -71,7 +76,8 @@ class Controller:
             self.set_relay(self.settings.relays["rimsToMash"], 0)
             return True
         else:
-            raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
+            raise ValueError(
+                "Location unknown: valid locations are 'mash' and 'boil'")
 
     def pump_status(self):
         return self.relay_status(self.settings.relays["pump"])
@@ -79,13 +85,6 @@ class Controller:
     def pump(self, state):
         self._safegaurd_state(state)
         self.set_relay(self.settings.relays['pump'], state)
-        return True
-
-    def _safegaurd_state(self, state):
-        if not isinstance(state, int):
-            raise ValueError("Relay State needs to be an integer, " + str(type(state)) + " given.")
-        if state < 0 or state > 1:
-            raise ValueError("State needs to be integer 0 or 1, " + str(state) + " given.")
         return True
 
     def sv(self):
@@ -101,7 +100,7 @@ class Controller:
 
     def watch(self):
         while self.pv() <= self.sv():
-            time.sleep(2) # :nocov:
+            time.sleep(2)  # :nocov:
 
         self.slack.send("PV is now at " + str(self.pv()) + " f")
         return True

@@ -11,5 +11,11 @@ setup(
     url='https://github.com/llamicron/brewer',
     download_url="https://github.com/llamicron/brewer/archive/%s.tar.gz" % VERSION,
     keywords=['beer', 'python', 'brewing'],
+    install_requires=[
+        "MinimalModbus",
+        "pyserial",
+        "slacker",
+        "terminaltables"
+    ],
     classifiers=[],
 )
