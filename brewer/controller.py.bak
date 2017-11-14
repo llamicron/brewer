@@ -1,8 +1,8 @@
-from . import str116
-from . import settings
-from .slack import BrewerBot
+import str116
+import settings
+from slack import BrewerBot
 import time
-from .omega import Omega
+from omega import Omega
 from terminaltables import AsciiTable
 
 class Controller:

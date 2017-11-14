@@ -1,6 +1,6 @@
 from omegacn7500 import OmegaCN7500
 import minimalmodbus
-from . import settings
+import settings
 
 """
 I know this is messy, but I've been having problems with minimalmodbus for weeks and the author has abandoned it.

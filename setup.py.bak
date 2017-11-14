@@ -1,5 +1,5 @@
 from distutils.core import setup
-from .brewer.version import VERSION
+from brewer.version import VERSION
 
 setup(
     name='brewer',

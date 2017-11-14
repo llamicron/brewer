@@ -9,7 +9,7 @@ bot = BrewerBot()
 
 
 def main():
-    print(("Brewer version %s" % VERSION))
+    print("Brewer version %s" % VERSION)
     code.InteractiveConsole(locals=globals()).interact()
 
 
