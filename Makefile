@@ -14,4 +14,4 @@ clean:
 	rm -rf htmlcov/
 
 test:
-	pytest --cov-report html --cov=brewer/  tests/
+	pytest tests/

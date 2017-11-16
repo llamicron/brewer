@@ -12,10 +12,7 @@ def _write_message(data):
         print(("Failed to create serial object. ({})".format(e)))
 
     usart.timeout = settings.timeout
-    # Python 2
-    # message_bytes = data.decode("hex")
-    # Python 3
-    message_bytes = data.encode()
+    message_bytes = data.decode("hex")
     try:
         usart.write(message_bytes)
         if settings.DEBUG:
