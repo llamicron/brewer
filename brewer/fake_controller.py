@@ -27,10 +27,10 @@ class FakeController():
                 "State needs to be integer 0 or 1, " + str(state) + " given.")
         return True
 
-    def relay_status(self, relay_num):
+    def relay_status(self, relay_num: int):
         return self.relays[relay_num]
 
-    def set_relay(self, relay_num, state):
+    def set_relay(self, relay_num: int, state: int):
         if state in ['on', 1]:
             state = True
         else:
@@ -47,7 +47,7 @@ class FakeController():
             "pv": self.pv()
         }
 
-    def pid(self, state):
+    def pid(self, state: int):
         self._safegaurd_state(state)
         if state == 1:
             self.omega.run()
@@ -55,12 +55,12 @@ class FakeController():
             self.omega.stop()
         return True
 
-    def hlt(self, state):
+    def hlt(self, state: int):
         self._safegaurd_state(state)
         self.set_relay(self.settings.relays['hlt'], state)
         return True
 
-    def hlt_to(self, location):
+    def hlt_to(self, location: str):
         if location == "mash":
             self.set_relay(self.settings.relays["hltToMash"], 1)
             return True
@@ -71,7 +71,7 @@ class FakeController():
             raise ValueError(
                 "Location unknown: valid locations are 'mash' and 'boil'")
 
-    def rims_to(self, location):
+    def rims_to(self, location: str):
         if location == "mash":
             self.set_relay(self.settings.relays["rimsToMash"], 1)
             return True
@@ -85,7 +85,7 @@ class FakeController():
     def pump_status(self):
         return self.relay_status(self.settings.relays["pump"])
 
-    def pump(self, state):
+    def pump(self, state: int):
         self._safegaurd_state(state)
         self.set_relay(self.settings.relays['pump'], state)
         return True
