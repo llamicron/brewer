@@ -11,7 +11,9 @@ the actual omega class. Take a look at them side by side.
 
 
 class FakeOmega():
-
+    """
+    See above. This is just to mock the actual `Omega` class. All methods callable on the `Omega` class are callable here.
+    """
     def __init__(self, ):
         self.pv_temp = randint(60, 120)
         self.sv_temp = randint(121, 175)

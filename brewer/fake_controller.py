@@ -9,6 +9,9 @@ This is just like FakeOmega. It's a simulation of the actual controller.
 """
 
 class FakeController():
+    """
+    See comment on `FakeOmega`. This is a mock of the `Controller` class. It doesn't use any hardware, only lies and fake data. Used for testing and development.
+    """
     def __init__(self):
         self.omega = FakeOmega()
         self.settings = settings

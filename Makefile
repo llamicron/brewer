@@ -15,3 +15,6 @@ clean:
 
 test:
 	pytest tests/
+
+docs:
+	pdoc --http

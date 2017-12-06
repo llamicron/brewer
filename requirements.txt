@@ -8,4 +8,5 @@ requests==2.18.4
 slacker==0.9.60
 terminaltables==3.1.0
 urllib3==1.22
-sphinx
+sphinx==1.6.5
+pdoc==0.3.2
