@@ -12,9 +12,9 @@ from .fake_controller import FakeController
 class Controller:
 
     def __new__(cls):
-        if getenv("force_use_fake_controller") == '1':
+        if getenv("force_fake_controller") == '1':
             return FakeController()
-        elif getenv("force_use_real_controller") == '1':
+        elif getenv("force_real_controller") == '1':
             return super(Controller, cls).__new__(cls)
 
         try:

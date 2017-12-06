@@ -19,9 +19,7 @@ Here is the output of `tree .` as of writing this documentation (subject to chan
 ├── dist
 │   └── brewer-0.2.4.tar.gz
 ├── docs
-│   ├── index.md
-│   ├── project.md
-│   └── quickstart.md
+│   └── DOC_FILES_HERE.md
 ├── __init__.py
 ├── Makefile
 ├── MANIFEST

@@ -1,5 +1,7 @@
 *.pyc
 tests/__pycache__
+__pycache__
+brewer/__pycache__
 .cache
 htmlcov/
 .coverage
