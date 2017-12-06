@@ -4,7 +4,8 @@ import unittest
 class StrikeTempCalculator(unittest.TestCase):
 
     def test_calc_strike_temp(self):
-        assert calc_strike_temp(14, 8, 89, 150) == 162.2
+        assert calc_strike_temp(14, 8, 89, 150) == 157.0
+        assert not calc_strike_temp(14, 8, 89, 150) == 162.0
 
     def test_calc_strike_temp_with_wrong_args(self):
         with self.assertRaises(TypeError):

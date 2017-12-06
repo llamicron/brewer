@@ -2,12 +2,21 @@ import sys
 import os
 import unittest
 from terminaltables import AsciiTable
+from ..brewer.fake_controller import FakeController
 from ..brewer.settings import relays
 from ..brewer.controller import Controller
 
 class ControllerTestCase(unittest.TestCase):
     def setUp(self):
         self.con = Controller.simulator()
+
+    def test_controller_simulator_env(self):
+        os.environ['controller_simulator'] = '1'
+        assert isinstance(Controller(), FakeController)
+        os.environ['controller_simulator'] = '0'
+        # assert isinstance(Controller(), Controller)
+
+
 
     def test_relay_status(self):
         self.con.set_relay(1, 1)

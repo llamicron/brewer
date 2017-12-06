@@ -1,12 +1,35 @@
+from os import getenv
+import time
+
 from . import str116
 from . import settings
 from .slack import BrewerBot
-import time
+import serial
 from .omega import Omega
 from terminaltables import AsciiTable
 from .fake_controller import FakeController
 
 class Controller:
+
+    def __new__(cls):
+        if getenv("force_use_fake_controller") == '1':
+            return FakeController()
+        elif getenv("force_use_real_controller") == '1':
+            return super(Controller, cls).__new__(cls)
+
+        try:
+            omega = Omega(
+                settings.port,
+                settings.rimsAddress,
+                settings.baudRate,
+                settings.timeout
+            )
+        except serial.serialutil.SerialException as exc:
+            print('\033[93m' + "\nNo hardware detected!\n" + '\033[0m')
+            print('\033[92m' + "Using FakeConroller()" + '\033[0m')
+            return FakeController()
+        return super(Controller, cls).__new__(cls)
+
     def __init__(self):
         self.omega = Omega(
             settings.port,
