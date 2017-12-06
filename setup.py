@@ -11,5 +11,8 @@ setup(
     url='https://github.com/llamicron/brewer',
     download_url="https://github.com/llamicron/brewer/archive/%s.tar.gz" % VERSION,
     keywords=['beer', 'python', 'brewing'],
+    scripts=[
+        'brewer/__main__.py'
+    ],
     classifiers=[],
 )
