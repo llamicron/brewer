@@ -1,10 +1,10 @@
-import str116
-import settings
-from slack import BrewerBot
+from . import str116
+from . import settings
+from .slack import BrewerBot
 import time
-from omega import Omega
+from .omega import Omega
 from terminaltables import AsciiTable
-from fake_controller import FakeController
+from .fake_controller import FakeController
 
 class Controller:
     def __init__(self):

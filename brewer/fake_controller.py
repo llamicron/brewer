@@ -1,8 +1,8 @@
-from fake_omega import FakeOmega
-from slack import BrewerBot
+from .fake_omega import FakeOmega
+from .slack import BrewerBot
 import time
 from terminaltables import AsciiTable
-import settings
+from . import settings
 
 """
 This is just like FakeOmega. It's a simulation of the actual controller.

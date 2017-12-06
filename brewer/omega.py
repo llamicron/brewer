@@ -1,7 +1,7 @@
 from omegacn7500 import OmegaCN7500
-from fake_omega import FakeOmega
+from .fake_omega import FakeOmega
 import minimalmodbus
-import settings
+from . import settings
 
 """
 I know this is messy, but I've been having problems with minimalmodbus for weeks and the author has abandoned it.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import serial
-import settings
+from . import settings
 import time
 import binascii
 import os
@@ -9,7 +9,7 @@ def _write_message(data):
     try:
         usart = serial.Serial (settings.port,settings.baudRate)
     except IOError as e :
-        print("Failed to create serial object. ({})".format(e))
+        print(("Failed to create serial object. ({})".format(e)))
 
     usart.timeout = settings.timeout
     message_bytes = data.decode("hex")
@@ -18,7 +18,7 @@ def _write_message(data):
         if settings.DEBUG:
             print('success')
     except IOError as e :
-        print("Failed to write to the port. ({})".format(e))
+        print(("Failed to write to the port. ({})".format(e)))
 
 def _write_message_with_response(data):
     usart = serial.Serial (settings.port,settings.baudRate)
@@ -38,7 +38,7 @@ def _write_message_with_response(data):
         else:
             print('usart not open')
     except IOError as e :
-        print("Failed to write to the port. ({})".format(e))
+        print(("Failed to write to the port. ({})".format(e)))
     return binascii.hexlify(data)
 
 def _get_checksum(data):
@@ -59,7 +59,7 @@ def set_relay(relaynumber, onoff):
     bytestring = settings.MA0 + settings.MA1 + str_to_checksum \
         + str(CS) + settings.MAE
     if settings.DEBUG:
-        print('set_relay bytestring: ' + bytestring)
+        print(('set_relay bytestring: ' + bytestring))
     _write_message(bytestring)
 
 def get_relay(relaynumber):
@@ -85,18 +85,18 @@ def get_relays_status():
     CS = _get_checksum(str_to_checksum)
     bytestring = settings.MA0 + settings.MA1 + str_to_checksum \
         + str(CS) + settings.MAE
-    print('relay status bytestring: ' + bytestring)
+    print(('relay status bytestring: ' + bytestring))
     relaystatus = _write_message_with_response(bytestring)[6:-4]
-    print('relay status: ' + relaystatus)
+    print(('relay status: ' + relaystatus))
 
 
     totalrelays = len(relaystatus)
     n = 0
     while(n < totalrelays):
         if str(relaystatus[n:n+2]) == '00':
-            print('relay ' + str(n/2).zfill(2) + ': off')
+            print(('relay ' + str(n/2).zfill(2) + ': off'))
         else:
-            print('relay ' + str(n/2).zfill(2) + ': on')
+            print(('relay ' + str(n/2).zfill(2) + ': on'))
         n += 2
 
 
