@@ -25,7 +25,7 @@ class SettingsTestCase(unittest.TestCase):
         assert isinstance(settings.CN, str)
 
     def test_relays(self):
-        for name, relay in settings.relays.iteritems():
+        for name, relay in settings.relays.items():
             assert isinstance(name, str)
             assert isinstance(relay, int)
 

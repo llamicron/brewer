@@ -6,3 +6,4 @@ htmlcov/
 .coveragerc
 dist/
 build/
+._.DS_Store
