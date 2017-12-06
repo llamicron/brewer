@@ -140,7 +140,7 @@ class Controller:
         Turns the pump on or off
         """
         self._safegaurd_state(state)
-        if state = 0:
+        if state == 0:
             self.pid(0)
         self.set_relay(self.settings.relays['pump'], state)
         return True
