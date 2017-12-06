@@ -2,6 +2,7 @@
 setup.cfg
 setup.py
 brewer/__init__.py
+brewer/__main__.py
 brewer/controller.py
 brewer/fake_controller.py
 brewer/fake_omega.py

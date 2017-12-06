@@ -17,5 +17,8 @@ setup(
         "slacker",
         "terminaltables"
     ],
+    scripts=[
+        'brewer/__main__.py'
+    ],
     classifiers=[],
 )
