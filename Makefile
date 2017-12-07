@@ -18,3 +18,5 @@ test:
 
 docs: build install
 	pdoc --html --html-dir=docs/ brewer
+	mv docs/brewer/* docs/
+	rm -r docs/brewer/
