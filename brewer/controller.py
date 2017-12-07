@@ -8,6 +8,7 @@ import serial
 from .omega import Omega
 from terminaltables import AsciiTable
 from .fake_controller import FakeController
+from .color import *
 
 
 class Controller:
@@ -21,8 +22,12 @@ class Controller:
         Can be overridden by environment variables `force_fake_controller` and `force_real_controller` set to '1'
         """
         if getenv("force_fake_controller") == '1':
+            green("force_fake_controller enabled")
+            green("Using FakeController()")
             return FakeController()
         elif getenv("force_real_controller") == '1':
+            green("force_real_controller enabled")
+            green("Using Controller()")
             return super(Controller, cls).__new__(cls)
 
         try:
@@ -34,9 +39,11 @@ class Controller:
                 settings.timeout
             )
         except serial.serialutil.SerialException as exc:
-            print('\033[93m' + "\nNo hardware detected!\n" + '\033[0m')
-            print('\033[92m' + "Using FakeConroller()" + '\033[0m')
+            yellow("No hardware detected!")
+            green("Using FakeConroller()")
             return FakeController()
+        green("Hardware found")
+        green("Using Controller()")
         return super(Controller, cls).__new__(cls)
 
     def __init__(self):
@@ -55,7 +62,7 @@ class Controller:
     def simulator():
         return FakeController()
 
-    def relay_status(self, relay_num: int):
+    def relay_status(relay_num: int):
         """
         Returns the relay status of a specified relay
         """
