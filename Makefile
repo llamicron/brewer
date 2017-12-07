@@ -1,12 +1,12 @@
 .PHONY: docs
 
-install:
-	python setup.py sdist
+install: build
+	pip install dist/*
 
 build:
 	python setup.py sdist
 
-upload:
+upload: build
 	twine upload dist/*
 
 clean:
@@ -16,5 +16,5 @@ clean:
 test:
 	pytest tests/
 
-docs:
-	pdoc --http
+docs: build install
+	pdoc --html --html-dir=docs/ brewer
