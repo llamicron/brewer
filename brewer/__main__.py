@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from IPython import embed
 from brewer.controller import Controller
 from brewer.slack import BrewerBot
