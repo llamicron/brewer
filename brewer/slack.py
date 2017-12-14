@@ -11,7 +11,8 @@ class BrewerBot(Slacker):
     """
     def __init__(self):
         self.token_file = os.path.expanduser("~") + "/slack.token"
-        self.slacker = Slacker(self.get_token())
+        self.token = self.get_token()
+        self.slacker = Slacker(self.token)
         self.channel = os.getenv('brewer_channel', '@luke')
 
     def get_token_from_file(self):
