@@ -39,11 +39,7 @@ class Controller:
                 settings.timeout
             )
         except serial.serialutil.SerialException as exc:
-            # yellow("No hardware detected!")
-            # green("Using FakeController()")
             return FakeController()
-        # green("Hardware found")
-        # green("Using Controller()")
         return super(Controller, cls).__new__(cls)
 
     def __init__(self):

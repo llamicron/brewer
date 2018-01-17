@@ -7,9 +7,9 @@
     <meta name="description" content="" />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
-  
+
   <style type="text/css">
-  
+
 * {
   box-sizing: border-box;
 }
@@ -550,7 +550,7 @@ table {
   </style>
 
   <style type="text/css">
-  
+
   html, body {
     margin: 0;
     padding: 0;
@@ -651,7 +651,7 @@ table {
 
   code {
     background: #f9f9f9;
-  } 
+  }
 
   pre {
     background: #fefefe;
@@ -668,7 +668,7 @@ table {
     .codehilite pre {
       margin: 0;
     }
-    .codehilite .err { background: #ff3300; color: #fff !important; } 
+    .codehilite .err { background: #ff3300; color: #fff !important; }
 
   table#module-list {
     font-size: 110%;
@@ -779,7 +779,7 @@ table {
       text-transform: uppercase;
       color: #fff;
       text-shadow: 1px 1px 0 #f4b700;
-      
+
       padding: 3px 8px;
       border-radius: 2px;
       transition: background .3s ease-in-out;
@@ -924,7 +924,7 @@ table {
   </style>
 
   <style type="text/css">
-  
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -1035,8 +1035,8 @@ table {
 <a href="#" id="top">Top</a>
 
 <div id="container">
-    
-  
+
+
   <div id="sidebar">
     <h1>Index</h1>
     <ul id="index">
@@ -1046,8 +1046,8 @@ table {
       <ul>
         <li class="mono">
         <span class="class_name"><a href="#brewer.controller.Controller">Controller</a></span>
-        
-          
+
+
   <ul>
     <li class="mono"><a href="#brewer.controller.Controller.__init__">__init__</a></li>
     <li class="mono"><a href="#brewer.controller.Controller.hlt">hlt</a></li>
@@ -1076,16 +1076,16 @@ table {
   </div>
 
     <article id="content">
-      
-  
 
-  
+
+
+
 
 
   <header id="section-intro">
   <h1 class="title"><span class="name">brewer.controller</span> module</h1>
-  
-  
+
+
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller', this);">Show source &equiv;</a></p>
   <div id="source-brewer.controller" class="source">
     <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getenv</span>
@@ -1297,11 +1297,11 @@ table {
 
 
     <h2 class="section-title" id="header-classes">Classes</h2>
-      
+
       <div class="item">
       <p id="brewer.controller.Controller" class="name">class <span class="ident">Controller</span></p>
-      
-  
+
+
     <div class="desc"><p>This is class that interfaces with the hardware of the brew rig and you.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller', this);">Show source &equiv;</a></p>
@@ -1506,15 +1506,15 @@ table {
           <li>builtins.object</li>
           </ul>
           <h3>Static methods</h3>
-            
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.__init__">
     <p>def <span class="ident">__init__</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Initialize self.  See help(type(self)) for accurate signature.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.__init__', this);">Show source &equiv;</a></p>
@@ -1534,16 +1534,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.hlt">
     <p>def <span class="ident">hlt</span>(</p><p>self, state)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Opens or closes the hlt valve</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.hlt', this);">Show source &equiv;</a></p>
@@ -1561,16 +1561,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.hlt_to">
     <p>def <span class="ident">hlt_to</span>(</p><p>self, location)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Sets location of hlt divert valve to 'mash' or 'boil' tuns.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.hlt_to', this);">Show source &equiv;</a></p>
@@ -1593,16 +1593,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.pid">
     <p>def <span class="ident">pid</span>(</p><p>self, state)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Set the pid on or off.</p>
 <p>Note: the pid should <em>never</em> be on if the pump is off. Liquid needs to circulate, or the heater will burn itself out.</p></div>
   <div class="source_cont">
@@ -1626,16 +1626,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.pid_running">
     <p>def <span class="ident">pid_running</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Returns True if pid is running, False otherwise.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.pid_running', this);">Show source &equiv;</a></p>
@@ -1651,16 +1651,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.pid_status">
     <p>def <span class="ident">pid_status</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Returns an a dictionary of pid status, pv, and sv</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.pid_status', this);">Show source &equiv;</a></p>
@@ -1680,16 +1680,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.pump">
     <p>def <span class="ident">pump</span>(</p><p>self, state)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Turns the pump on or off</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.pump', this);">Show source &equiv;</a></p>
@@ -1709,16 +1709,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.pump_status">
     <p>def <span class="ident">pump_status</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.pump_status', this);">Show source &equiv;</a></p>
   <div id="source-brewer.controller.Controller.pump_status" class="source">
@@ -1730,16 +1730,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.pv">
     <p>def <span class="ident">pv</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Returns the Proccess Value (PV)</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.pv', this);">Show source &equiv;</a></p>
@@ -1755,16 +1755,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.relay_status">
     <p>def <span class="ident">relay_status</span>(</p><p>self, relay_num)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Returns the relay status of a specified relay</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.relay_status', this);">Show source &equiv;</a></p>
@@ -1780,16 +1780,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.rims_to">
     <p>def <span class="ident">rims_to</span>(</p><p>self, location)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Sets location of rims divert valve to 'mash' or 'boil' tuns.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.rims_to', this);">Show source &equiv;</a></p>
@@ -1812,16 +1812,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.set_relay">
     <p>def <span class="ident">set_relay</span>(</p><p>self, relay_num, state)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Sets relay state to on or off.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.set_relay', this);">Show source &equiv;</a></p>
@@ -1837,16 +1837,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.set_sv">
     <p>def <span class="ident">set_sv</span>(</p><p>self, temp)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Sets the setpoint value. Should be float, int is acceptable</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.set_sv', this);">Show source &equiv;</a></p>
@@ -1864,16 +1864,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.simulator">
     <p>def <span class="ident">simulator</span>(</p><p>)</p>
     </div>
-    
 
-    
-  
+
+
+
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.simulator', this);">Show source &equiv;</a></p>
   <div id="source-brewer.controller.Controller.simulator" class="source">
@@ -1886,16 +1886,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.status_table">
     <p>def <span class="ident">status_table</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Returns an <code>AsciiTable</code> class of pid and pump status.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.status_table', this);">Show source &equiv;</a></p>
@@ -1918,16 +1918,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.sv">
     <p>def <span class="ident">sv</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Returns the Setpoint value (SV)</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.sv', this);">Show source &equiv;</a></p>
@@ -1943,16 +1943,16 @@ table {
 </div>
 
   </div>
-  
-            
+
+
   <div class="item">
     <div class="name def" id="brewer.controller.Controller.watch">
     <p>def <span class="ident">watch</span>(</p><p>self)</p>
     </div>
-    
 
-    
-  
+
+
+
     <div class="desc"><p>Watches temperatures, and returns true when PV is &gt;= SV.</p></div>
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.controller.Controller.watch', this);">Show source &equiv;</a></p>
@@ -1971,34 +1971,34 @@ table {
 </div>
 
   </div>
-  
+
           <h3>Instance variables</h3>
             <div class="item">
             <p id="brewer.controller.Controller.omega" class="name">var <span class="ident">omega</span></p>
-            
 
-            
-  
+
+
+
   <div class="source_cont">
 </div>
 
             </div>
             <div class="item">
             <p id="brewer.controller.Controller.settings" class="name">var <span class="ident">settings</span></p>
-            
 
-            
-  
+
+
+
   <div class="source_cont">
 </div>
 
             </div>
             <div class="item">
             <p id="brewer.controller.Controller.slack" class="name">var <span class="ident">slack</span></p>
-            
 
-            
-  
+
+
+
   <div class="source_cont">
 </div>
 
