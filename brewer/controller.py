@@ -2,6 +2,8 @@ from . import str116
 from . import settings
 from .slack import BrewerBot
 import time
+from os import getenv
+import serial
 from .omega import Omega
 from terminaltables import AsciiTable
 from .fake_controller import FakeController
@@ -50,6 +52,10 @@ class Controller:
         self.settings = settings
 
         self.slack = BrewerBot()
+
+    @staticmethod
+    def simulator():
+        return FakeController()
 
     def relay_status(self, relay_num):
         return str116.get_relay(relay_num)
