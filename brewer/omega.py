@@ -1,12 +1,13 @@
+"""
+I know this is messy, but I've been having problems with minimalmodbus for weeks and the author has abandoned it.
+This is my best option. Sometimes the serial communication fails and you have to retry, hence the while True: loops.
+"""
+from contextlib import suppress
+
 from omegacn7500 import OmegaCN7500
 from .fake_omega import FakeOmega
 import minimalmodbus
 from . import settings
-
-"""
-I know this is messy, but I've been having problems with minimalmodbus for weeks and the author has abandoned it.
-This is my best option
-"""
 
 class Omega():
     """
@@ -29,7 +30,6 @@ class Omega():
         """
         return FakeOmega()
 
-
     def safeguard(self, item, types):
         """
         Make sure arguments are the expected type
@@ -44,61 +44,49 @@ class Omega():
         Get the Proccess Value (PV) from the CN7500
         """
         while True:
-            try:
+            with suppress(IOError):
                 return float(self.instrument.get_pv())
-            except IOError: # pragma: no cover - This is hard to force
-                continue
 
     def sv(self):
         """
         Get the Setpoint Value (SV) from the CN7500
         """
         while True:
-            try:
+            with suppress(IOError):
                 return float(self.instrument.get_setpoint())
-            except IOError: # pragma: no cover - This is hard to force
-                continue
 
     def set_sv(self, temp):
         """
         Set the SV on the CN7500
         """
         while True:
-            try:
+            with suppress(IOError):
                 self.safeguard(temp, [int, float])
                 self.instrument.set_setpoint(temp)
                 return True
-            except IOError: # pragma: no cover - This is hard to force
-                continue
 
     def is_running(self):
         """
         Returns `True` if the CN7500 is powering the heating element, AKA it's "on"
         """
         while True:
-            try:
+            with suppress(IOError):
                 return self.instrument.is_running()
-            except IOError: # pragma: no cover - This is hard to force
-                continue
 
     def run(self):
         """
         Turn on the CN7500
         """
         while True:
-            try:
+            with suppres(IOError):
                 self.instrument.run()
                 return True
-            except IOError: # pragma: no cover - This is hard to force
-                continue
 
     def stop(self):
         """
         Turns off the CN7500
         """
         while True:
-            try:
+            with suppress(IOError):
                 self.instrument.stop()
                 return True
-            except IOError: # pragma: no cover - This is hard to force
-                continue

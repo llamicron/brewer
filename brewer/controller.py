@@ -1,18 +1,22 @@
-from . import str116
-from . import settings
-from .slack import BrewerBot
+# Standard Libs
 import time
 from os import getenv
-import serial
+
+# My Code
+from . import str116
+from . import settings
 from .omega import Omega
-from terminaltables import AsciiTable
 from .fake_controller import FakeController
 from .color import *
-# A small little change
+from .slack import BrewerBot
+
+# Not my code
+import serial
+from terminaltables import AsciiTable
 
 class Controller:
     """
-    This is class that interfaces with the hardware of the brew rig and you.
+    Entry point for this project.
     """
     def __new__(cls):
         """

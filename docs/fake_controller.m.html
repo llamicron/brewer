@@ -1116,10 +1116,10 @@ table {
                 <span class="s2">&quot;State needs to be integer 0 or 1, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; given.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
 
-    <span class="k">def</span> <span class="nf">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="n">relay_num</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;on&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
             <span class="n">state</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1136,7 +1136,7 @@ table {
             <span class="s2">&quot;pv&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pv</span><span class="p">()</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">pid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">omega</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -1144,12 +1144,12 @@ table {
             <span class="bp">self</span><span class="o">.</span><span class="n">omega</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">True</span>
 
-    <span class="k">def</span> <span class="nf">hlt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hlt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s1">&#39;hlt&#39;</span><span class="p">],</span> <span class="n">state</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
 
-    <span class="k">def</span> <span class="nf">hlt_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hlt_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;mash&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;hltToMash&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">True</span>
@@ -1160,7 +1160,7 @@ table {
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;Location unknown: valid locations are &#39;mash&#39; and &#39;boil&#39;&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">rims_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">rims_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;mash&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;rimsToMash&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">True</span>
@@ -1174,7 +1174,7 @@ table {
     <span class="k">def</span> <span class="nf">pump_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;pump&quot;</span><span class="p">])</span>
 
-    <span class="k">def</span> <span class="nf">pump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s1">&#39;pump&#39;</span><span class="p">],</span> <span class="n">state</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
@@ -1244,10 +1244,10 @@ table {
                 <span class="s2">&quot;State needs to be integer 0 or 1, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; given.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
 
-    <span class="k">def</span> <span class="nf">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="n">relay_num</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;on&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
             <span class="n">state</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1264,7 +1264,7 @@ table {
             <span class="s2">&quot;pv&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pv</span><span class="p">()</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">pid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">omega</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -1272,12 +1272,12 @@ table {
             <span class="bp">self</span><span class="o">.</span><span class="n">omega</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">True</span>
 
-    <span class="k">def</span> <span class="nf">hlt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hlt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s1">&#39;hlt&#39;</span><span class="p">],</span> <span class="n">state</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
 
-    <span class="k">def</span> <span class="nf">hlt_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hlt_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;mash&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;hltToMash&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">True</span>
@@ -1288,7 +1288,7 @@ table {
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;Location unknown: valid locations are &#39;mash&#39; and &#39;boil&#39;&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">rims_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">rims_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;mash&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;rimsToMash&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">True</span>
@@ -1302,7 +1302,7 @@ table {
     <span class="k">def</span> <span class="nf">pump_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;pump&quot;</span><span class="p">])</span>
 
-    <span class="k">def</span> <span class="nf">pump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s1">&#39;pump&#39;</span><span class="p">],</span> <span class="n">state</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
@@ -1384,7 +1384,7 @@ table {
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.fake_controller.FakeController.hlt', this);">Show source &equiv;</a></p>
   <div id="source-brewer.fake_controller.FakeController.hlt" class="source">
-    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">hlt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">hlt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s1">&#39;hlt&#39;</span><span class="p">],</span> <span class="n">state</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">True</span>
@@ -1407,7 +1407,7 @@ table {
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.fake_controller.FakeController.hlt_to', this);">Show source &equiv;</a></p>
   <div id="source-brewer.fake_controller.FakeController.hlt_to" class="source">
-    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">hlt_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">hlt_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;mash&quot;</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;hltToMash&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
@@ -1436,7 +1436,7 @@ table {
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.fake_controller.FakeController.pid', this);">Show source &equiv;</a></p>
   <div id="source-brewer.fake_controller.FakeController.pid" class="source">
-    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">pid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">pid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">omega</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -1508,7 +1508,7 @@ table {
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.fake_controller.FakeController.pump', this);">Show source &equiv;</a></p>
   <div id="source-brewer.fake_controller.FakeController.pump" class="source">
-    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">pump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">pump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_safegaurd_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s1">&#39;pump&#39;</span><span class="p">],</span> <span class="n">state</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">True</span>
@@ -1573,7 +1573,7 @@ table {
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.fake_controller.FakeController.relay_status', this);">Show source &equiv;</a></p>
   <div id="source-brewer.fake_controller.FakeController.relay_status" class="source">
-    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">):</span>
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">relay_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="n">relay_num</span><span class="p">]</span>
 </pre></div>
 
@@ -1594,7 +1594,7 @@ table {
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.fake_controller.FakeController.rims_to', this);">Show source &equiv;</a></p>
   <div id="source-brewer.fake_controller.FakeController.rims_to" class="source">
-    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">rims_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">rims_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;mash&quot;</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">relays</span><span class="p">[</span><span class="s2">&quot;rimsToMash&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">True</span>
@@ -1623,7 +1623,7 @@ table {
   <div class="source_cont">
   <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.fake_controller.FakeController.set_relay', this);">Show source &equiv;</a></p>
   <div id="source-brewer.fake_controller.FakeController.set_relay" class="source">
-    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">set_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relay_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;on&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
         <span class="n">state</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="k">else</span><span class="p">:</span>

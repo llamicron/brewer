@@ -3,7 +3,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>brewer.version API documentation</title>
+    <title>brewer.color API documentation</title>
     <meta name="description" content="" />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
@@ -1043,11 +1043,31 @@ table {
     <li class="set"><h3><a href="#header-variables">Module variables</a></h3>
       
   <ul>
-    <li class="mono"><a href="#brewer.version.VERSION">VERSION</a></li>
+    <li class="mono"><a href="#brewer.color.BOLD">BOLD</a></li>
+    <li class="mono"><a href="#brewer.color.END">END</a></li>
+    <li class="mono"><a href="#brewer.color.FAIL">FAIL</a></li>
+    <li class="mono"><a href="#brewer.color.HEADER">HEADER</a></li>
+    <li class="mono"><a href="#brewer.color.OKBLUE">OKBLUE</a></li>
+    <li class="mono"><a href="#brewer.color.OKGREEN">OKGREEN</a></li>
+    <li class="mono"><a href="#brewer.color.UNDERLINE">UNDERLINE</a></li>
+    <li class="mono"><a href="#brewer.color.WARNING">WARNING</a></li>
   </ul>
 
     </li>
 
+    <li class="set"><h3><a href="#header-functions">Functions</a></h3>
+      
+  <ul>
+    <li class="mono"><a href="#brewer.color.blue">blue</a></li>
+    <li class="mono"><a href="#brewer.color.bold">bold</a></li>
+    <li class="mono"><a href="#brewer.color.green">green</a></li>
+    <li class="mono"><a href="#brewer.color.pink">pink</a></li>
+    <li class="mono"><a href="#brewer.color.red">red</a></li>
+    <li class="mono"><a href="#brewer.color.underline">underline</a></li>
+    <li class="mono"><a href="#brewer.color.yellow">yellow</a></li>
+  </ul>
+
+    </li>
 
 
     </ul>
@@ -1061,12 +1081,58 @@ table {
 
 
   <header id="section-intro">
-  <h1 class="title"><span class="name">brewer.version</span> module</h1>
+  <h1 class="title"><span class="name">brewer.color</span> module</h1>
   
   
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.version', this);">Show source &equiv;</a></p>
-  <div id="source-brewer.version" class="source">
-    <div class="codehilite"><pre><span></span><span class="n">VERSION</span><span class="o">=</span><span class="s2">&quot;0.4.2&quot;</span>
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color" class="source">
+    <div class="codehilite"><pre><span></span><span class="n">HEADER</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[95m&#39;</span>
+<span class="n">OKBLUE</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[94m&#39;</span>
+<span class="n">OKGREEN</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[92m&#39;</span>
+<span class="n">WARNING</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[93m&#39;</span>
+<span class="n">FAIL</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[91m&#39;</span>
+<span class="n">END</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+<span class="n">BOLD</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1m&#39;</span>
+<span class="n">UNDERLINE</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[4m&#39;</span>
+
+<span class="k">def</span> <span class="nf">red</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">FAIL</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">pink</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">HEADER</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">blue</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">OKBLUE</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">green</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">OKGREEN</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">yellow</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">WARNING</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">bold</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">BOLD</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">underline</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">UNDERLINE</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+    <span class="n">red</span><span class="p">(</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+    <span class="n">pink</span><span class="p">(</span><span class="s2">&quot;Pink&quot;</span><span class="p">)</span>
+    <span class="n">blue</span><span class="p">(</span><span class="s2">&quot;Blue&quot;</span><span class="p">)</span>
+    <span class="n">green</span><span class="p">(</span><span class="s2">&quot;Green&quot;</span><span class="p">)</span>
+    <span class="n">yellow</span><span class="p">(</span><span class="s2">&quot;Yellow&quot;</span><span class="p">)</span>
+    <span class="n">bold</span><span class="p">(</span><span class="s2">&quot;Bold&quot;</span><span class="p">)</span>
+    <span class="n">underline</span><span class="p">(</span><span class="s2">&quot;Underline&quot;</span><span class="p">)</span>
 </pre></div>
 
   </div>
@@ -1076,7 +1142,63 @@ table {
   <section id="section-items">
     <h2 class="section-title" id="header-variables">Module variables</h2>
       <div class="item">
-      <p id="brewer.version.VERSION" class="name">var <span class="ident">VERSION</span></p>
+      <p id="brewer.color.BOLD" class="name">var <span class="ident">BOLD</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+      </div>
+      <div class="item">
+      <p id="brewer.color.END" class="name">var <span class="ident">END</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+      </div>
+      <div class="item">
+      <p id="brewer.color.FAIL" class="name">var <span class="ident">FAIL</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+      </div>
+      <div class="item">
+      <p id="brewer.color.HEADER" class="name">var <span class="ident">HEADER</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+      </div>
+      <div class="item">
+      <p id="brewer.color.OKBLUE" class="name">var <span class="ident">OKBLUE</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+      </div>
+      <div class="item">
+      <p id="brewer.color.OKGREEN" class="name">var <span class="ident">OKGREEN</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+      </div>
+      <div class="item">
+      <p id="brewer.color.UNDERLINE" class="name">var <span class="ident">UNDERLINE</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+      </div>
+      <div class="item">
+      <p id="brewer.color.WARNING" class="name">var <span class="ident">WARNING</span></p>
       
   
   <div class="source_cont">
@@ -1084,6 +1206,161 @@ table {
 
       </div>
 
+    <h2 class="section-title" id="header-functions">Functions</h2>
+      
+  <div class="item">
+    <div class="name def" id="brewer.color.blue">
+    <p>def <span class="ident">blue</span>(</p><p>string)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color.blue', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color.blue" class="source">
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">blue</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">OKBLUE</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+
+  </div>
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="brewer.color.bold">
+    <p>def <span class="ident">bold</span>(</p><p>string)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color.bold', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color.bold" class="source">
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">bold</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">BOLD</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+
+  </div>
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="brewer.color.green">
+    <p>def <span class="ident">green</span>(</p><p>string)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color.green', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color.green" class="source">
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">green</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">OKGREEN</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+
+  </div>
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="brewer.color.pink">
+    <p>def <span class="ident">pink</span>(</p><p>string)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color.pink', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color.pink" class="source">
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">pink</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">HEADER</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+
+  </div>
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="brewer.color.red">
+    <p>def <span class="ident">red</span>(</p><p>string)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color.red', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color.red" class="source">
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">red</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">FAIL</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+
+  </div>
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="brewer.color.underline">
+    <p>def <span class="ident">underline</span>(</p><p>string)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color.underline', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color.underline" class="source">
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">underline</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">UNDERLINE</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+
+  </div>
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="brewer.color.yellow">
+    <p>def <span class="ident">yellow</span>(</p><p>string)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-brewer.color.yellow', this);">Show source &equiv;</a></p>
+  <div id="source-brewer.color.yellow" class="source">
+    <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">yellow</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">WARNING</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+
+  </div>
+</div>
+
+  </div>
+  
 
 
   </section>
