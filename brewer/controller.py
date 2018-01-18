@@ -24,13 +24,9 @@ class Controller:
 
         Can be overridden by environment variables `force_fake_controller` and `force_real_controller` set to '1'
         """
-        if getenv("force_fake_controller") == '1':
-            green("force_fake_controller enabled")
-            green("Using FakeController()")
+        if getenv('force_fake_controller'):
             return FakeController()
-        elif getenv("force_real_controller") == '1':
-            green("force_real_controller enabled")
-            green("Using Controller()")
+        elif getenv('force_real_controller'):
             return super(Controller, cls).__new__(cls)
 
         try:
@@ -41,7 +37,7 @@ class Controller:
                 settings.baudRate,
                 settings.timeout
             )
-        except serial.serialutil.SerialException as exc:
+        except serial.serialutil.SerialException:
             return FakeController()
         return super(Controller, cls).__new__(cls)
 

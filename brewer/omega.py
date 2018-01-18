@@ -3,20 +3,41 @@ I know this is messy, but I've been having problems with minimalmodbus for weeks
 This is my best option. Sometimes the serial communication fails and you have to retry, hence the while True: loops.
 """
 from contextlib import suppress
+from os import getenv
+import warnings
 
 from omegacn7500 import OmegaCN7500
 from .fake_omega import FakeOmega
 import minimalmodbus
 from . import settings
+import serial
 
 class Omega():
     """
     A wrapper for OmegaCN7500. Dear god help me...
-
     Note: "Omega", "CN7500", and "PID" all refer to the same thing. It's an Omega CN7500 PID. Sometimes I refer to the heater as the PID, because I'm slightly retarded.
-
-    Note2: I had to wrap all the methods in while loops because this hardware doesn't play nice.
     """
+    # def __new__(cls, port, rimsAddress, baudRate, timeout):
+    #     """
+    #     Same as on Controller(). If there's no hardware, return a FakeOmega
+    #     """
+    #     if getenv('force_fake_controller'):
+    #         warnings.warn("Using FakeOmega()")
+    #         return FakeOmega(port, rimsAddress, baudRate, timeout)
+    #     elif getenv('force_real_controller'):
+    #         warnings.warn("Using Omega()")
+    #         return super(Omega, cls).__new__(cls)
+
+    #     try:
+    #         omega = Omega(port, rimsAddress, baudRate, timeout)
+    #     except serial.serialutil.SerialException:
+    #         warnings.warn("Using FakeOmega()")
+    #         return FakeOmega()
+    #     warnings.warn("Using Omega()")
+    #     return super(Omega, cls).__new__(cls)
+
+
+
     def __init__(self, port, address, baudrate=None, timeout=None):
         self.instrument = OmegaCN7500(port, address)
         self.instrument.serial.baudrate = baudrate if baudrate else settings.baudRate
@@ -29,6 +50,15 @@ class Omega():
         Returns a "fake omega" that doesn't require any hardware. Used for testing and development.
         """
         return FakeOmega()
+
+    @staticmethod
+    def test_com():
+        instrument = OmegaCN7500(port, address)
+        try:
+            instrument.get_pv()
+            return True
+        except serial.serialutil.SerialException:
+            return False
 
     def safeguard(self, item, types):
         """

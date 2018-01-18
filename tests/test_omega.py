@@ -6,8 +6,8 @@ from ..brewer.fake_omega import FakeOmega
 
 class OmegaTestCase(unittest.TestCase):
     def setUp(self):
-        # self.omega = Omega(settings.port, settings.rimsAddress, settings.baudRate, settings.timeout)
-        self.omega = Omega.simulator()
+        self.omega = Omega(settings.port, settings.rimsAddress, settings.baudRate, settings.timeout)
+        # self.omega = Omega.simulator()
 
     def test_pv(self):
         assert isinstance(self.omega.pv(), float)
