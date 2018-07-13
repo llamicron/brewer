@@ -15,7 +15,6 @@ setup(
         "MinimalModbus",
         "pyserial",
         "slacker",
-        "terminaltables"
     ],
     scripts=[
         'brewer/__main__.py'
