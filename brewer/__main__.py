@@ -4,7 +4,6 @@ from brewer.controller import Controller
 from brewer.version import VERSION
 
 controller = Controller()
-bot = BrewerBot()
 
 print("Brewer version %s" % VERSION)
 
