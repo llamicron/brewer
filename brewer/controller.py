@@ -53,6 +53,15 @@ class Controller:
 
         self.slack = BrewerBot()
 
+    def __str__(self):
+        return AsciiTable([
+            ["Setting", "Value"],
+            ["PID on?", str(self.pid_status()['pid_running'])],
+            ["Pump on?", str(self.pump_status())],
+            ["pv", str(self.pv())],
+            ["sv", str(self.sv())]
+        ])
+
     @staticmethod
     def simulator():
         return FakeController()
@@ -138,13 +147,3 @@ class Controller:
             time.sleep(4) # :nocov:
 
         return True
-
-    def status_table(self):
-        status = AsciiTable([
-            ["Setting", "Value"],
-            ["PID on?", str(self.pid_status()['pid_running'])],
-            ["Pump on?", str(self.pump_status())],
-            ["pv", str(self.pv())],
-            ["sv", str(self.sv())]
-        ])
-        return status
