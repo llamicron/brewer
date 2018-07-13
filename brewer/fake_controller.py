@@ -1,5 +1,4 @@
 from .fake_omega import FakeOmega
-from .slack import BrewerBot
 import time
 from . import settings
 
@@ -14,7 +13,6 @@ class FakeController():
     def __init__(self):
         self.omega = FakeOmega()
         self.settings = settings
-        self.slack = BrewerBot()
         self.relays = [True, False, True, True]
 
     def __str__(self):
@@ -107,10 +105,3 @@ class FakeController():
 
     def pv(self):
         return float(self.omega.pv())
-
-    def watch(self):
-        while self.pv() <= self.sv():
-            time.sleep(2)  # :nocov:
-
-        self.slack.send("PV is now at " + str(self.pv()) + " f")
-        return True

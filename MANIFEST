@@ -9,7 +9,6 @@ brewer/fake_controller.py
 brewer/fake_omega.py
 brewer/omega.py
 brewer/settings.py
-brewer/slack.py
 brewer/str116.py
 brewer/strike_temp_calculator.py
 brewer/version.py

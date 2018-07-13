@@ -14,7 +14,6 @@ setup(
     install_requires=[
         "MinimalModbus",
         "pyserial",
-        "slacker",
     ],
     scripts=[
         'brewer/__main__.py'

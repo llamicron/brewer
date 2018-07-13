@@ -8,7 +8,6 @@ from . import settings
 from .omega import Omega
 from .fake_controller import FakeController
 from .color import *
-from .slack import BrewerBot
 
 # Not my code
 import serial
@@ -50,7 +49,6 @@ class Controller:
 
         self.settings = settings
 
-        self.slack = BrewerBot()
 
     def __str__(self):
         return {
@@ -139,9 +137,3 @@ class Controller:
 
     def pv(self):
         return float(self.omega.pv())
-
-    def watch(self):
-        while not round(self.pv()) in range(int(self.sv() - 3), int(self.sv() + 3)):
-            time.sleep(4) # :nocov:
-
-        return True
