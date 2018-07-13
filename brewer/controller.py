@@ -12,7 +12,6 @@ from .slack import BrewerBot
 
 # Not my code
 import serial
-from terminaltables import AsciiTable
 
 class Controller:
     """
@@ -54,13 +53,12 @@ class Controller:
         self.slack = BrewerBot()
 
     def __str__(self):
-        return AsciiTable([
-            ["Setting", "Value"],
-            ["PID on?", str(self.pid_status()['pid_running'])],
-            ["Pump on?", str(self.pump_status())],
-            ["pv", str(self.pv())],
-            ["sv", str(self.sv())]
-        ])
+        return {
+            "PID on?": str(self.pid_status()['pid_running']),
+            "Pump on?": str(self.pump_status()),
+            "pv": str(self.pv()),
+            "sv": str(self.sv())
+        }
 
     @staticmethod
     def simulator():

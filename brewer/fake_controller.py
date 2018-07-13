@@ -1,7 +1,6 @@
 from .fake_omega import FakeOmega
 from .slack import BrewerBot
 import time
-from terminaltables import AsciiTable
 from . import settings
 
 """
@@ -17,6 +16,14 @@ class FakeController():
         self.settings = settings
         self.slack = BrewerBot()
         self.relays = [True, False, True, True]
+
+    def __str__(self):
+        return {
+            "PID on?": str(self.pid_status()['pid_running']),
+            "Pump on?": str(self.pump_status()),
+            "pv": str(self.pv()),
+            "sv": str(self.sv())
+        }
 
     def _safegaurd_state(self, state):
         if not isinstance(state, int):
@@ -107,13 +114,3 @@ class FakeController():
 
         self.slack.send("PV is now at " + str(self.pv()) + " f")
         return True
-
-    def status_table(self):
-        status = AsciiTable([
-            ["Setting", "Value"],
-            ["PID on?", str(self.pid_status()['pid_running'])],
-            ["Pump on?", str(self.pump_status())],
-            ["pv", str(self.pv())],
-            ["sv", str(self.sv())]
-        ])
-        return status

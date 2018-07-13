@@ -1,7 +1,6 @@
 import sys
 import os
 import unittest
-from terminaltables import AsciiTable
 from ..brewer.fake_controller import FakeController
 from ..brewer.settings import relays
 from ..brewer.controller import Controller
@@ -86,9 +85,6 @@ class ControllerTestCase(unittest.TestCase):
     def test_watch(self):
         self.con.set_sv(self.con.pv() - 1)
         assert self.con.watch()
-
-    def test_status_table(self):
-        assert isinstance(self.con.status_table(), AsciiTable)
 
     def test_relay_safeguard(self):
         with self.assertRaises(ValueError):
