@@ -2,11 +2,10 @@
 from IPython import embed
 from brewer.controller import Controller
 from brewer.version import VERSION
-from brewer.color import *
 
 controller = Controller()
 bot = BrewerBot()
 
-green(("Brewer version %s" % VERSION))
+print("Brewer version %s" % VERSION)
 
 embed()

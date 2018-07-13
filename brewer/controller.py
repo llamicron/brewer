@@ -7,7 +7,6 @@ from . import str116
 from . import settings
 from .omega import Omega
 from .fake_controller import FakeController
-from .color import *
 
 # Not my code
 import serial
@@ -100,7 +99,6 @@ class Controller:
             return True
         else:
             raise ValueError("Location unknown: valid locations are 'mash' and 'boil'")
-
 
     def rims_to(self, location):
         if location == "mash":
