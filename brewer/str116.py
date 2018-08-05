@@ -75,6 +75,7 @@ def get_relay(relaynumber):
         return True
     else:
         return False
+
 def get_relays_status():
     #command to get the status of all of the relays in an array.
     #format is
@@ -98,8 +99,6 @@ def get_relays_status():
         else:
             print(('relay ' + str(n/2).zfill(2) + ': on'))
         n += 2
-
-
 
 def set_baudrate():
     """
