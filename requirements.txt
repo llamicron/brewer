@@ -6,6 +6,6 @@ MinimalModbus==0.7
 pyserial==3.4
 requests==2.18.4
 slacker==0.9.60
-urllib3==1.22
+urllib3==1.24.2
 sphinx==1.6.5
 pdoc==0.3.2
