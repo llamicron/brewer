@@ -1,5 +1,5 @@
 certifi==2017.7.27.1
-ipython==5.5.0
+ipython==7.16.3
 chardet==3.0.4
 idna==2.6
 MinimalModbus==0.7
